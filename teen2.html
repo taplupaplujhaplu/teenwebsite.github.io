@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello World</title>
+    <style>
+        /* Background styling for the body */
+        body {
+            background-image: url('photo/onlyhouse.png'); /* Update with the correct path */
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            color: white; 
+            font-family: Arial, sans-serif;
+            text-align: center; 
+            margin: 0; 
+            padding: 0;
+            height: 100vh;
+        }
+
+
+        .toggle-container {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            z-index: 1000; /* Ensures it stays above all other elements */
+            display: flex;
+            align-items: center;
+        }
+
+        .toggle-label {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background-color: #686868;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            top: 1px;
+            left: 1px;
+            transition: 0.3s;
+        }
+
+        /* Toggle on */
+        .toggle-switch.active {
+            background-color: #4CAF50;
+        }
+
+        .toggle-switch.active::before {
+            transform: translateX(25px);
+        }
+
+         /* Responsive adjustments */
+         @media (max-width: 800px) {
+            .toggle-container {
+                top: 70px; /* Move it slightly down */
+                right: 10px; /* Move it slightly to the left */
+            }
+
+            h1 {
+                margin-top: 60px; /* Add extra margin on top of the heading */
+                font-size: 24px; /* Adjust font size for small screens */
+            }
+        }
+
+        /* Black top bar styling */
+        .top-bar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Black background */
+            color: white; /* White text */
+            padding: 10px 0; /* Adds vertical padding */
+            position: fixed; /* Sticks it to the top */
+            top: 0; /* Positions at the top */
+            left: 0;
+            z-index: 999; /* Ensures it's on top of other elements */
+            font-size: 2.1em; /* Increases font size slightly */
+        }
+
+        /* Adds margin to content so it doesn't overlap with the top bar */
+        .content {
+            margin-top: 100px; /* Adjust according to the height of your top bar */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Styling for the image button */
+        .image-button img {
+            width: 200px;
+            height: auto;
+            border: none; 
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            transition: transform 0.3s ease;
+        }
+
+        .image-button img:hover {
+            transform: translateY(-10px); /* Moves the image up by 10px */
+        }
+
+       
+    </style>
+</head>
+<body>
+
+
+    <!-- Background Music Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="music/oggy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Toggle Switch -->
+    <div class="toggle-container">
+        <span class="toggle-label">Music<br>on/off</span>
+        <div id="musicToggle" class="toggle-switch"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Select the audio element and the toggle button
+        const music = document.getElementById('backgroundMusic');
+        const toggleSwitch = document.getElementById('musicToggle');
+
+        // Flag to track music state
+        let isPlaying = false;
+
+        // Toggle music play/pause
+        toggleSwitch.addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                toggleSwitch.classList.remove('active');
+            } else {
+                music.play();
+                toggleSwitch.classList.add('active');
+            }
+            isPlaying = !isPlaying; // Flip the state
+        });
+    </script>
+    
+
+    <!-- Black top bar --> 
+    <div class="top-bar">
+        Welcome to The Website for Teens
+    </div>
+
+    <div class="content">
+        <div class="image-container">
+            <div class="image-button">
+                <a href="2nd webpage.html">
+                    <img src="video/communicationre.gif" alt="Go to second webpage">
+                </a>
+            </div>
+
+            <div class="image-button">
+                <a href="2nd webpage.html">
+                    <img src="video/TIME MANAGEMENT00.gif" alt="Go to second webpage">
+                </a>
+            </div>
+
+            <div class="image-button">
+                <a href="2nd webpage.html">
+                    <img src="video/FINence 01_1.gif" alt="Go to second webpage">
+                </a>
+            </div>
+
+            <div class="image-button">
+                <a href="2nd webpage.html">
+                    <img src="video/CAREER.gif" alt="Go to second webpage">
+                </a>
+            </div>
+            <div class="image-button">
+                <a href="2nd webpage.html">
+                    <img src="video/ONLINE.gif" alt="Go to second webpage">
+                </a>
+            </div>
+        </div>
+        <h1>Hello World</h1>
+        
+    </div>
+
+</body>
+</html>
