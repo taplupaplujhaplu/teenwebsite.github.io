@@ -13,12 +13,16 @@
             background-position: center; 
             color: white; 
             
-            text-align: center; 
+            /* text-align: center;  */
             margin: 0; 
             padding: 0;
             height: 100vh;
             font-family: 'Brush Script MT', cursive;
             font-stretch: ultra-expanded;
+        }
+
+        .image-button{
+            text-align: center;
         }
 
         .image-button img {
@@ -43,8 +47,17 @@
             font-weight: bold;
         }
 
+        .paragraph {
+            width: 30%;
+        }
         .content {
             margin-top: 50px; /* Adjust according to the height of your top bar */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .downward{
+            text-align: center;
         }
     </style>
 </head>
@@ -54,16 +67,23 @@
         <u>Welcome to a life changing journey!</u>
     </div>
     <div class="content">
-
+        <div class="paragraph">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad soluta voluptatem officiis, praesentium animi beatae, a vel eos, pariatur itaque at cupiditate assumenda aut eveniet iste nostrum qui? Eos, quibusdam.
+            </p>
+        </div>
         <div class="image-button">
             <a href="teen2.html">
                 <img src="video/set started11_1.gif" alt="Go to second webpage">
             </a>
-            
         </div>
-        <h1>Hello World</h1>
-        
+        <div class="paragraph">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aperiam, sequi in repudiandae fugiat accusamus atque optio! Expedita vitae mollitia ipsum quibusdam non facere officia veritatis, laudantium itaque consectetur unde!
+            </p>
+        </div>
     </div>
+    <p class="downward">Hello world!</p>
 
     
 </body>
