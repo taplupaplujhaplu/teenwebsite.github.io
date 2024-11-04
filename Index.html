@@ -1,83 +1,132 @@
-<!--This is Index.html-->
+<!-- This is Index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cool Website</title>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Set the background image to cover the entire page */
-        body {
-            background-image: url('video/Untitled\ design.gif'); /* Update with the correct path */
-            background-size: cover; 
-            background-repeat: no-repeat; 
-            background-position: center; 
-            color: white; 
-            
-            /* text-align: center;  */
-            margin: 0; 
+        /* Reset margin and padding for the whole page */
+        html, body {
+            margin: 0;
             padding: 0;
-            height: 100vh;
+            height: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        body {
+            background-image: url('video/Untitled design.gif'); /* Update with the correct path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
             font-family: 'Brush Script MT', cursive;
             font-stretch: ultra-expanded;
-        }
-
-        .image-button{
-            text-align: center;
-        }
-
-        .image-button img {
-            width: 500px;
-            height: auto;
-            border: none; 
-            cursor: pointer; /* Changes cursor to pointer on hover */
-            transition: transform 0.3s ease;
-        }
-
-        .image-button img:hover {
-            transform: translateY(-50px); /* Moves the image up by 10px */
         }
 
         /* Style the header bar */
         .header {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
             color: rgb(70, 211, 211);
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             font-size: 50px;
             font-weight: bold;
         }
 
-        .footer {
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-            color: rgb(70, 211, 211);
-            padding: 20px;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .paragraph {
-            width: 30%;
-        }
         .content {
             margin-top: 50px; /* Adjust according to the height of your top bar */
             display: flex;
             align-items: center;
             justify-content: space-around;
         }
-        .downward{
+
+        .paragraph {
+            width: 25%;
+            height: 340px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 5px solid rgb(218, 0, 252);
+            margin: 0;
+        }
+
+        .image-button {
             text-align: center;
+        }
+
+        .image-button img {
+            width: 500px;
+            height: auto;
+            border: none;
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            transition: transform 0.3s ease;
+        }
+
+        .image-button img:hover {
+            transform: translateY(-50px); /* Moves the image up by 50px */
+        }
+
+        .downward {
+            text-align: center;
+        }
+
+        /* Style the footer with flexbox */
+        .footer {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent black */
+            color: rgb(70, 211, 211);
+            padding: 4px 10px; /* Reduced padding for a slimmer appearance */
+            font-size: 14px; /* Font size for footer text */
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box; /* Include padding in the total width */
+        }
+
+        .contact-info {
+            font-size: 16px; /* Increased font size for email */
+            line-height: 1; /* Adjust line height for better alignment */
+        }
+
+        .contact-info a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px; /* Space between icons */
+        }
+
+        .social-icons a {
+            color: rgb(70, 211, 211);
+            font-size: 20px; /* Icon size */
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: rgb(0, 0, 0);
+        }
+        .paragraph {
+            color: rgb(255, 255, 255);
+            font-family: courier;
+            font-size: 160%;
         }
     </style>
 </head>
 <body>
     <!-- Header bar with a title -->
     <div class="header">
-        <u>Welcome to a life changing journey!</u>
+        <u>Welcome to a life-changing journey!</u>
     </div>
+
     <div class="content">
         <div class="paragraph">
             <p>
@@ -95,11 +144,28 @@
             </p>
         </div>
     </div>
-    <p class="downward">Hello world!</p>
-    <div class="footer">
-        <u>How are you ?</u>
-    </div>
 
-    
+    <p class="downward">Hello world!</p>
+
+    <!-- Footer with email on the left and icons on the right -->
+    <div class="footer">
+        <div class="contact-info">
+            <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
