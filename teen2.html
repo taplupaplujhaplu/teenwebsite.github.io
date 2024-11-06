@@ -15,8 +15,8 @@
             margin: 0; 
             padding: 0;
             height: 100vh;
+            cursor: url('photo/stick48.jpg'), auto; /* Custom cursor applied to the body */
         }
-
 
         .toggle-container {
             position: fixed;
@@ -38,7 +38,7 @@
             height: 25px;
             background-color: #686868;
             border-radius: 25px;
-            cursor: pointer;
+            cursor: url('photo/stick48.jpg'), auto; /* Ensure the custom cursor stays here */
         }
 
         .toggle-switch::before {
@@ -104,20 +104,17 @@
         .image-button img {
             width: 200px;
             height: auto;
-            border: none; 
-            cursor: pointer; /* Changes cursor to pointer on hover */
+            border: none;
+            cursor: url('photo/stick48.jpg'), auto; /* Custom cursor for image links */
             transition: transform 0.3s ease;
         }
 
         .image-button img:hover {
-            transform: translateY(-10px); /* Moves the image up by 10px */
+            transform: translateY(-20px); /* Moves the image up by 20px */
         }
-
-       
     </style>
 </head>
 <body>
-
 
     <!-- Background Music Audio Element -->
     <audio id="backgroundMusic" loop>
