@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Management</title>
+    <style>
+      /* Base reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Set up background image and layout */
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("./photo/eisenhover_example.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        color: #333;
+        overflow-y: scroll;
+        line-height: 1.6;
+        padding-bottom: 40px;
+      }
+
+      /* Header with main title and toggle */
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        flex-grow: 1;
+      }
+
+      /* Toggle switch styling */
+      .toggle-container {
+        position: absolute;
+        right: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .toggle-container label {
+        margin-right: 10px;
+      }
+
+      .toggle {
+        position: relative;
+        width: 50px;
+        height: 24px;
+        background-color: #ccc;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .toggle::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        top: 2px;
+        left: 2px;
+        transition: 0.3s;
+      }
+
+      .toggle.active {
+        background-color: #4caf50;
+      }
+
+      .toggle.active::before {
+        left: 26px;
+      }
+
+      /* Page content */
+      .content {
+        padding: 100px 20px 20px;
+        max-width: 800px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .content h2 {
+        font-size: 1.8rem;
+        color: #4caf50;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .content p,
+      .content ul {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      /* Table for Eisenhower Matrix */
+      table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      td {
+        background-color: #ffffff;
+      }
+
+      /* Link styling */
+      a {
+        color: #2196f3;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Image styling */
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Title and Immersive Experience Toggle -->
+    <div class="header">
+      <h1>Manage Time Like a Pro</h1>
+      <div class="toggle-container">
+        <label for="audioToggle">Immersive Experience</label>
+        <div id="audioToggle" class="toggle" onclick="toggleAudio()"></div>
+      </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+      <!-- SMART Goals Section -->
+      <div class="SMART">
+        <h2>SMART Goals: A Framework for Achieving Success</h2>
+        <p>
+          SMART is a powerful goal-setting method that helps you set clear,
+          actionable, and achievable goals. Here’s what SMART stands for:
+        </p>
+        <ul>
+          <li>
+            <strong>Specific:</strong> Your goal should be clear and
+            unambiguous. <em>Example:</em> "I want to improve my math grade by
+            10%."
+          </li>
+          <li>
+            <strong>Measurable:</strong> Define how success will be measured.
+            <em>Example:</em> "I will measure my improvement by the grade I get
+            on my next math test."
+          </li>
+          <li>
+            <strong>Achievable:</strong> Ensure the goal is realistic and
+            possible. <em>Example:</em> "I can achieve this by setting aside 30
+            minutes daily for math practice."
+          </li>
+          <li>
+            <strong>Relevant:</strong> The goal should align with other
+            objectives. <em>Example:</em> "Improving my math grade will help my
+            academic success."
+          </li>
+          <li>
+            <strong>Time-Bound:</strong> Set a clear deadline.
+            <em>Example:</em> "I aim to achieve this goal by the end of the
+            semester."
+          </li>
+        </ul>
+        <p>
+          <strong>Why Use SMART Goals?</strong><br />
+          SMART goals provide direction and clarity, ensuring measurable
+          success.
+        </p>
+      </div>
+
+      <!-- Task Prioritization with Eisenhower Matrix -->
+      <div class="Task-Prioritization">
+        <h2>
+          Task Prioritization: Manage Multiple Responsibilities Effectively
+        </h2>
+        <p>
+          The Eisenhower Matrix prioritizes tasks based on urgency and
+          importance:
+        </p>
+        <table>
+          <tr>
+            <th>Quadrant</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><strong>Urgent & Important</strong> (Do Now)</td>
+            <td>
+              These tasks are time-sensitive and critical. Complete them
+              immediately.
+            </td>
+            <td>"Finish the science project due tomorrow."</td>
+          </tr>
+          <tr>
+            <td><strong>Important but Not Urgent</strong> (Schedule)</td>
+            <td>
+              These tasks are essential but don’t need immediate action.
+              Schedule them.
+            </td>
+            <td>"Start preparing for next week’s math exam."</td>
+          </tr>
+          <tr>
+            <td><strong>Urgent but Not Important</strong> (Delegate)</td>
+            <td>
+              These tasks require attention but don’t impact main goals.
+              Delegate or postpone.
+            </td>
+            <td>"Respond to non-essential emails."</td>
+          </tr>
+          <tr>
+            <td><strong>Neither Urgent nor Important</strong> (Eliminate)</td>
+            <td>
+              These tasks are often distractions. Minimize or eliminate them.
+            </td>
+            <td>"Limit time on social media."</td>
+          </tr>
+        </table>
+        <img
+          src="photo/eisenhover_example.jpg"
+          alt="Eisenhower matrix example"
+        />
+        <p>
+          Know more:
+          <a
+            href="https://asana.com/resources/eisenhower-matrix"
+            target="_blank"
+            >External website</a
+          >
+        </p>
+      </div>
+      <div class="Study-Skills-Planning">
+        <h2>Study Skills and Planning: Build Effective Study Habits</h2>
+        <p>
+          Creating a study plan and adopting effective habits can help you stay
+          on track and avoid last-minute cramming. Here are some key tips:
+        </p>
+        <ul>
+          <li>
+            <strong>Set Specific Study Goals:</strong> Break down what you need
+            to achieve in each study session. <br />
+            <em>Example:</em> "Review Chapter 5 and complete related practice
+            problems."
+          </li>
+          <li>
+            <strong>Create a Consistent Routine:</strong> Study at the same time
+            daily to build a habit and improve focus. <br />
+            <em>Example:</em> "Study for 30 minutes after school every day."
+          </li>
+          <li>
+            <strong>Break Down Assignments:</strong> Split larger tasks into
+            smaller, manageable steps. <br />
+            <em>Example:</em> "Research for project today, outline tomorrow, and
+            draft over the weekend."
+          </li>
+          <li>
+            <strong>Practice Active Learning:</strong> Engage with the material
+            through note-taking, quizzing yourself, or teaching others. <br />
+            <em>Example:</em> "Summarize key points in your own words after
+            reading."
+          </li>
+          <li>
+            <strong>Avoid Procrastination:</strong> Use tools like the Pomodoro
+            Technique to stay focused, working in short, timed intervals with
+            breaks. <br />
+            <em>Example:</em> "Study for 25 minutes, then take a 5-minute
+            break."
+          </li>
+        </ul>
+        <p>
+          <strong>Why Develop Study Skills?</strong><br />
+          Good study habits make learning more effective, reduce stress, and
+          help you retain information over the long term.
+        </p>
+      </div>
+
+      <div class="Digital-Tools-Organization">
+        <h2>Digital Tools for Organization: Stay on Track with Apps</h2>
+        <p>
+          Digital tools can help you organize tasks, track progress, and stay
+          motivated. Here are some recommended apps and tips for getting the
+          most out of them:
+        </p>
+        <ul>
+          <li>
+            <strong>Google Calendar:</strong> Schedule events, set reminders,
+            and color-code tasks (e.g., red for school, blue for personal) to
+            easily see what’s on your agenda. <br />
+            <em>Example:</em> "Add your homework deadline and set a reminder one
+            day before."
+          </li>
+          <li>
+            <strong>Trello:</strong> Use Trello’s Kanban boards to track tasks
+            and progress. Create lists like “To-Do,” “In Progress,” and “Done”
+            to visually manage work. <br />
+            <em>Example:</em> "Add each subject’s assignments as separate cards
+            in Trello."
+          </li>
+          <li>
+            <strong>Notion:</strong> Set up customizable databases and templates
+            to track goals, projects, and notes in one place. <br />
+            <em>Example:</em> "Use a study planner template to organize study
+            sessions for each subject."
+          </li>
+          <li>
+            <strong>Reminders App (Mobile):</strong> For quick, simple
+            reminders, use your phone’s native app to set time- or
+            location-based alerts. <br />
+            <em>Example:</em> "Set a reminder to check assignments each
+            evening."
+          </li>
+        </ul>
+        <p>
+          <strong>Why Use Digital Tools?</strong><br />
+          Digital tools make it easier to stay organized, manage time
+          efficiently, and reduce the chances of missing important deadlines.
+        </p>
+      </div>
+    </div>
+    <!-- JavaScript for Toggle Functionality -->
+    <script>
+      let audio; // Declare audio variable outside the function
+
+      function toggleAudio() {
+        const toggle = document.getElementById("audioToggle");
+
+        // Initialize audio only once if it hasn't been initialized yet
+        if (!audio) {
+          audio = new Audio("./music/oggy.mp3");
+          audio.loop = true;
+        }
+
+        // Check if toggle is active; if so, pause audio, else play audio
+        if (toggle.classList.contains("active")) {
+          audio.pause();
+          toggle.classList.remove("active");
+        } else {
+          audio.play();
+          toggle.classList.add("active");
+        }
+      }
+    </script>
+  </body>
+</html>
