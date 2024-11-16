@@ -1,394 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Safety Awareness</title>
-  <style>
-    /* Body styling for background */
-    body {
-      font-family: 'Courier New', Courier, monospace;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      color: #00ff00;
-      overflow: auto;
-      text-align: left; /* Align text to the left */
-      position: relative;
-      padding: 20px; /* Add padding to avoid text touching edges */
-      cursor: url('photo/stick48.jpg'), auto; /* Custom cursor image */
-    }
-
-    /* Full screen background canvas for Matrix effect */
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    /* Content container */
-    .content {
-      max-width: 1000px; /* Limit the maximum width */
-      margin: 0 auto;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-    }
-
-    /* Heading */
-    .heading {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 30px;
-      color: #00ff00;
-      text-transform: uppercase;
-      background: rgba(0, 0, 0, 0.8); /* Semi-transparent box */
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    /* Tips container */
-    .tips {
-      font-size: 1.1em;
-      line-height: 1.8;
-      color: #00ff00;
-    }
-
-    .tip-item {
-      margin-bottom: 25px;
-      background: rgba(0, 0, 0, 0.8); /* Semi-transparent box for tips */
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .tip-item h3 {
-      font-size: 1.5em;
-      color: #00ff00;
-      text-decoration: underline;
-    }
-
-    .tip-item p {
-      margin: 10px 0;
-    }
-
-    /* Styling for emoji */
-    .emoji {
-      font-size: 2.5em;
-    }
-
-    /* Button/Link style */
-    .btn {
-      display: inline-block;
-      background-color: #00ff00;
-      color: black;
-      font-weight: bold;
-      padding: 12px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-    }
-
-    .btn:hover {
-      background-color: #00cc00;
-    }
-
-    /* Toggle Switch Styling */
-    .toggle-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .toggle-label {
-      font-size: 1em;
-      color: #00ff00;
-      margin-right: 10px;
-    }
-
-    .toggle-switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 24px;
-    }
-
-    .toggle-switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: 0.4s;
-      border-radius: 24px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 18px;
-      width: 18px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: 0.4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: #00cc00;
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .heading {
-        font-size: 2em; /* Reduce font size on smaller screens */
-      }
-
-      .tip-item {
-        padding: 15px; /* Reduce padding on smaller screens */
-      }
-
-      .tips {
-        font-size: 1em; /* Adjust font size for mobile screens */
-      }
-    }
-
-    @media (max-width: 480px) {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Safety Awareness</title>
+    <style>
+      /* Body styling for background */
       body {
-        padding: 10px; /* Add smaller padding for very small screens */
+        font-family: "Courier New", Courier, monospace;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        color: #00ff00;
+        overflow: auto;
+        text-align: left; /* Align text to the left */
+        position: relative;
+        padding: 20px; /* Add padding to avoid text touching edges */
+        cursor: url("photo/stick48.jpg"), auto; /* Custom cursor image */
       }
 
+      /* Full screen background canvas for Matrix effect */
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      /* Content container */
+      .content {
+        max-width: 1000px; /* Limit the maximum width */
+        margin: 0 auto;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+      }
+
+      /* Heading */
       .heading {
-        font-size: 1.5em; /* Further reduce heading size */
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #00ff00;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent box */
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      /* Tips container */
+      .tips {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #00ff00;
       }
 
       .tip-item {
-        padding: 10px;
+        margin-bottom: 25px;
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent box for tips */
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
+      .tip-item h3 {
+        font-size: 1.5em;
+        color: #00ff00;
+        text-decoration: underline;
+      }
+
+      .tip-item p {
+        margin: 10px 0;
+      }
+
+      /* Styling for emoji */
       .emoji {
-        font-size: 2em; /* Adjust emoji size for smaller screens */
+        font-size: 2.5em;
       }
-    }
 
-    .safety-image {
+      /* Button/Link style */
+      .btn {
+        display: inline-block;
+        background-color: #00ff00;
+        color: black;
+        font-weight: bold;
+        padding: 12px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+
+      .btn:hover {
+        background-color: #00cc00;
+      }
+
+      /* Toggle Switch Styling */
+      .toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .toggle-label {
+        font-size: 1em;
+        color: #00ff00;
+        margin-right: 10px;
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 24px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: #00cc00;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .heading {
+          font-size: 2em; /* Reduce font size on smaller screens */
+        }
+
+        .tip-item {
+          padding: 15px; /* Reduce padding on smaller screens */
+        }
+
+        .tips {
+          font-size: 1em; /* Adjust font size for mobile screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 10px; /* Add smaller padding for very small screens */
+        }
+
+        .heading {
+          font-size: 1.5em; /* Further reduce heading size */
+        }
+
+        .tip-item {
+          padding: 10px;
+        }
+
+        .emoji {
+          font-size: 2em; /* Adjust emoji size for smaller screens */
+        }
+      }
+
+      .safety-image {
         display: block;
         max-width: 100%;
         height: auto;
         margin: 20px auto; /* Center the image and add some space */
         border-radius: 10px; /* Optional: add rounded corners */
-    }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Matrix effect background -->
+    <canvas id="matrixCanvas"></canvas>
 
-  </style>
-</head>
-<body>
-
-  <!-- Matrix effect background -->
-  <canvas id="matrixCanvas"></canvas>
-
-  <div class="toggle-container">
-    <span class="toggle-label">Immersive <br>Experience</span>
-    <label class="toggle-switch">
-      <input type="checkbox" id="musicToggle">
-      <span class="slider"></span>
-    </label>
-  </div>
-
-  <!-- Audio Element for Background Music -->
-  <audio id="backgroundMusic" loop>
-    <source src="music/Voice OF Black Hat Hackers Deface Page Music - ladla101 (youtube).mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- Main content area -->
-  <div class="content">
-    <div class="heading">🚨 Avoid Digital Danger Like a Pro! 🚨</div>
-    <img src="photo/Gemini_Generated_Image_z2fpfcz2fpfcz2fp.jpeg" alt="Digital Safety Image" class="safety-image">
-    
-    <div class="tips">
-      <div class="tip-item">
-        <h3 class="emoji">🔒 Guard Your Personal Info Like a Secret Code</h3>
-        <p>Your name, age, address, or your latest hangout spot? Keep that private! The less the world knows, the safer you’ll be.</p>
-        <p>Pro Tip: Don’t give away more than what’s necessary – some websites are super nosy. 🤐</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🔑 Create Passwords That Even Hackers Can't Guess</h3>
-        <p>Say goodbye to boring passwords like "password123"! You want something hard to guess, like a random mix of letters, numbers, and symbols. The crazier, the better!</p>
-        <p>Extra Power: Turn on two-factor authentication (2FA) – it’s like adding a secret level of protection to your accounts.</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🚨 Don’t Fall for the Fake Link Trap!</h3>
-        <p>Phishing scams are when scammers trick you into clicking a sketchy link and stealing your info. If you get an email saying you've "won a free iPhone" – just hit delete!</p>
-        <p>What to Look for: Weird sender names or a link that looks off – like "banking-secure-site.com" (but really it’s “banking-secure-site.scam”).</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🔄 Hit “Update” ASAP!</h3>
-        <p>Don’t skip those annoying software updates – they’re like your phone or computer’s armor.</p>
-        <p>Pro Tip: Set updates to happen automatically, so you don’t have to worry about it!</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🚪 Lock Down Your Social Media</h3>
-        <p>Keep your profiles private! Set your accounts so only your friends can see your posts.</p>
-        <p>Fun Fact: Did you know your Instagram posts can show up in Google searches? So, be picky about what you share.</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🛑 Public Wi-Fi? Not So Fast!</h3>
-        <p>Public Wi-Fi is awesome, but it's also a playground for hackers. Don’t check your bank account or shop online when using Wi-Fi at the coffee shop or in a public place.</p>
-        <p>Security Tip: Use a VPN (Virtual Private Network) to keep your data safe when browsing on public Wi-Fi.</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🚨 Feel Something’s Off? Tell Someone!</h3>
-        <p>If you ever get creepy messages or weird emails – don’t ignore it. Report it to the platform or tell an adult you trust.</p>
-        <p>Bonus Tip: Block the person sending the strange stuff and keep yourself safe!</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🧐 Not Everyone Online is Your Friend</h3>
-        <p>People you meet on the internet might not be who they say they are. Keep your conversations light and keep personal info to yourself.</p>
-        <p>Red Flag: If someone you don’t know asks for personal details like your address or phone number, walk away!</p>
-      </div>
-
-      <div class="tip-item">
-        <h3 class="emoji">🔐 Lock Your Phone!</h3>
-        <p>Phones are like mini-computers, so protect them like one. Use a password, face ID, or fingerprint to lock your phone.</p>
-        <p>Bonus: Always download apps from trusted sources like Google Play or the App Store.</p>
-      </div>
-
-        
-        <div class="tip-item">
-            <h3 class="emoji">🖥️ Secure Your Computer with Antivirus</h3>
-            <p>Always have reliable antivirus software installed on your devices. This helps catch malware and viruses before they can do damage.</p>
-            <p>Pro Tip: Update your antivirus regularly so it can protect you from the latest threats.</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">🔌 Be Mindful of USB Drives and External Devices</h3>
-            <p>Be careful when plugging in USB drives or external hard drives from unknown sources. These can carry harmful viruses.</p>
-            <p>Reminder: Always scan external devices with your antivirus software before accessing the files.</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">🌐 Browse Smart with Secure Connections</h3>
-            <p>Always look for a lock icon or "https://" in the URL before entering sensitive information, like your credit card details.</p>
-            <p>Tip: Avoid downloading files from unknown websites, even if they promise cool features or free stuff.</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">📲 Think Twice Before Clicking ‘Allow’ on App Permissions</h3>
-            <p>Many apps ask for permissions they don’t actually need. Only grant permissions that are essential.</p>
-            <p>Pro Tip: Review the app’s privacy policy to understand what data they collect and how they use it.</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">📝 Double-Check Before You Post Online</h3>
-            <p>Before sharing a post, photo, or story online, think about how it could be used. Once it’s out there, it’s hard to take back.</p>
-            <p>Rule of Thumb: If you wouldn’t want it shown to your grandma or future employer, don’t post it.</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">🛡️ Back Up Your Data Regularly</h3>
-            <p>Protect yourself from losing important files by making regular backups of your data. Use external drives or secure cloud storage.</p>
-            <p>Bonus Tip: Schedule automatic backups to make life easier!</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">👁️ Be Wary of Suspicious Pop-Ups</h3>
-            <p>Pop-ups saying, “Your computer is infected!” or “Click here to win a prize!” are often scams. Don’t click them.</p>
-            <p>Safety Tip: Use your browser’s built-in pop-up blocker to reduce these interruptions.</p>
-        </div>
-
-        <div class="tip-item">
-            <h3 class="emoji">💬 Be Cautious with Online Surveys</h3>
-            <p>Surveys asking personal questions, like your favorite pet's name or your mother's maiden name, can be used to guess your passwords.</p>
-            <p>Tip: Avoid sharing too much or using answers to security questions that are easily guessed.</p>
-        </div>
-        
-
-      <a href="https://youtu.be/wtCDiS-mZQQ?si=nHru_cGdlso9SNEv" class="btn">Get More Tips on Cyber Security!</a>
+    <div class="toggle-container">
+      <span class="toggle-label">Immersive <br />Experience</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="musicToggle" />
+        <span class="slider"></span>
+      </label>
     </div>
-  </div>
 
-  <script>
-    // Matrix effect JavaScript
-    const canvas = document.getElementById('matrixCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+    <!-- Audio Element for Background Music -->
+    <audio id="backgroundMusic" loop>
+      <source
+        src="music/Voice OF Black Hat Hackers Deface Page Music - ladla101 (youtube).mp3"
+        type="audio/mp3"
+      />
+      Your browser does not support the audio element.
+    </audio>
 
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const charArray = chars.split("");
+    <!-- Main content area -->
+    <div class="content">
+      <div class="heading">🚨 Avoid Digital Danger Like a Pro! 🚨</div>
+      <img
+        src="photo/Gemini_Generated_Image_z2fpfcz2fpfcz2fp.jpeg"
+        alt="Digital Safety Image"
+        class="safety-image"
+      />
 
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const drops = Array(columns).fill(1);
+      <div class="tips">
+        <div class="tip-item">
+          <h3 class="emoji">🔒 Guard Your Personal Info Like a Secret Code</h3>
+          <p>
+            Your name, age, address, or your latest hangout spot? Keep that
+            private! The less the world knows, the safer you’ll be.
+          </p>
+          <p>
+            Pro Tip: Don’t give away more than what’s necessary – some websites
+            are super nosy. 🤐
+          </p>
+        </div>
 
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+        <div class="tip-item">
+          <h3 class="emoji">
+            🔑 Create Passwords That Even Hackers Can't Guess
+          </h3>
+          <p>
+            Say goodbye to boring passwords like "password123"! You want
+            something hard to guess, like a random mix of letters, numbers, and
+            symbols. The crazier, the better!
+          </p>
+          <p>
+            Extra Power: Turn on two-factor authentication (2FA) – it’s like
+            adding a secret level of protection to your accounts.
+          </p>
+        </div>
 
-      ctx.fillStyle = "#00ff00";
-      ctx.font = fontSize + "px monospace";
+        <div class="tip-item">
+          <h3 class="emoji">🚨 Don’t Fall for the Fake Link Trap!</h3>
+          <p>
+            Phishing scams are when scammers trick you into clicking a sketchy
+            link and stealing your info. If you get an email saying you've "won
+            a free iPhone" – just hit delete!
+          </p>
+          <p>
+            What to Look for: Weird sender names or a link that looks off – like
+            "banking-secure-site.com" (but really it’s
+            “banking-secure-site.scam”).
+          </p>
+        </div>
 
-      for (let i = 0; i < drops.length; i++) {
-        const text = charArray[Math.floor(Math.random() * charArray.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+        <div class="tip-item">
+          <h3 class="emoji">🔄 Hit “Update” ASAP!</h3>
+          <p>
+            Don’t skip those annoying software updates – they’re like your phone
+            or computer’s armor.
+          </p>
+          <p>
+            Pro Tip: Set updates to happen automatically, so you don’t have to
+            worry about it!
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🚪 Lock Down Your Social Media</h3>
+          <p>
+            Keep your profiles private! Set your accounts so only your friends
+            can see your posts.
+          </p>
+          <p>
+            Fun Fact: Did you know your Instagram posts can show up in Google
+            searches? So, be picky about what you share.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🛑 Public Wi-Fi? Not So Fast!</h3>
+          <p>
+            Public Wi-Fi is awesome, but it's also a playground for hackers.
+            Don’t check your bank account or shop online when using Wi-Fi at the
+            coffee shop or in a public place.
+          </p>
+          <p>
+            Security Tip: Use a VPN (Virtual Private Network) to keep your data
+            safe when browsing on public Wi-Fi.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🚨 Feel Something’s Off? Tell Someone!</h3>
+          <p>
+            If you ever get creepy messages or weird emails – don’t ignore it.
+            Report it to the platform or tell an adult you trust.
+          </p>
+          <p>
+            Bonus Tip: Block the person sending the strange stuff and keep
+            yourself safe!
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🧐 Not Everyone Online is Your Friend</h3>
+          <p>
+            People you meet on the internet might not be who they say they are.
+            Keep your conversations light and keep personal info to yourself.
+          </p>
+          <p>
+            Red Flag: If someone you don’t know asks for personal details like
+            your address or phone number, walk away!
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🔐 Lock Your Phone!</h3>
+          <p>
+            Phones are like mini-computers, so protect them like one. Use a
+            password, face ID, or fingerprint to lock your phone.
+          </p>
+          <p>
+            Bonus: Always download apps from trusted sources like Google Play or
+            the App Store.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🖥️ Secure Your Computer with Antivirus</h3>
+          <p>
+            Always have reliable antivirus software installed on your devices.
+            This helps catch malware and viruses before they can do damage.
+          </p>
+          <p>
+            Pro Tip: Update your antivirus regularly so it can protect you from
+            the latest threats.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">
+            🔌 Be Mindful of USB Drives and External Devices
+          </h3>
+          <p>
+            Be careful when plugging in USB drives or external hard drives from
+            unknown sources. These can carry harmful viruses.
+          </p>
+          <p>
+            Reminder: Always scan external devices with your antivirus software
+            before accessing the files.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🌐 Browse Smart with Secure Connections</h3>
+          <p>
+            Always look for a lock icon or "https://" in the URL before entering
+            sensitive information, like your credit card details.
+          </p>
+          <p>
+            Tip: Avoid downloading files from unknown websites, even if they
+            promise cool features or free stuff.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">
+            📲 Think Twice Before Clicking ‘Allow’ on App Permissions
+          </h3>
+          <p>
+            Many apps ask for permissions they don’t actually need. Only grant
+            permissions that are essential.
+          </p>
+          <p>
+            Pro Tip: Review the app’s privacy policy to understand what data
+            they collect and how they use it.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">📝 Double-Check Before You Post Online</h3>
+          <p>
+            Before sharing a post, photo, or story online, think about how it
+            could be used. Once it’s out there, it’s hard to take back.
+          </p>
+          <p>
+            Rule of Thumb: If you wouldn’t want it shown to your grandma or
+            future employer, don’t post it.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">🛡️ Back Up Your Data Regularly</h3>
+          <p>
+            Protect yourself from losing important files by making regular
+            backups of your data. Use external drives or secure cloud storage.
+          </p>
+          <p>Bonus Tip: Schedule automatic backups to make life easier!</p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">👁️ Be Wary of Suspicious Pop-Ups</h3>
+          <p>
+            Pop-ups saying, “Your computer is infected!” or “Click here to win a
+            prize!” are often scams. Don’t click them.
+          </p>
+          <p>
+            Safety Tip: Use your browser’s built-in pop-up blocker to reduce
+            these interruptions.
+          </p>
+        </div>
+
+        <div class="tip-item">
+          <h3 class="emoji">💬 Be Cautious with Online Surveys</h3>
+          <p>
+            Surveys asking personal questions, like your favorite pet's name or
+            your mother's maiden name, can be used to guess your passwords.
+          </p>
+          <p>
+            Tip: Avoid sharing too much or using answers to security questions
+            that are easily guessed.
+          </p>
+        </div>
+
+        <a href="https://youtu.be/wtCDiS-mZQQ?si=nHru_cGdlso9SNEv" class="btn"
+          >Get More Tips on Cyber Security!</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // Matrix effect JavaScript
+      const canvas = document.getElementById("matrixCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const charArray = chars.split("");
+
+      const fontSize = 16;
+      const columns = canvas.width / fontSize;
+      const drops = Array(columns).fill(1);
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#00ff00";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = charArray[Math.floor(Math.random() * charArray.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
         }
-        drops[i]++;
       }
-    }
 
-    setInterval(draw, 35);
+      setInterval(draw, 35);
 
-    // Music control functionality
-    const musicToggle = document.getElementById('musicToggle');
-    const backgroundMusic = document.getElementById('backgroundMusic');
+      // Music control functionality
+      const musicToggle = document.getElementById("musicToggle");
+      const backgroundMusic = document.getElementById("backgroundMusic");
 
-    // Attempt to autoplay music on page load
-    window.addEventListener('load', () => {
-      backgroundMusic.play().catch(() => {
-        // If autoplay fails (due to browser restrictions), disable the toggle
-        musicToggle.checked = false;
+      // Attempt to autoplay music on page load
+      window.addEventListener("load", () => {
+        backgroundMusic.play().catch(() => {
+          // If autoplay fails (due to browser restrictions), disable the toggle
+          musicToggle.checked = false;
+        });
       });
-    });
 
-    // Toggle music on or off
-    musicToggle.addEventListener('change', () => {
-      if (musicToggle.checked) {
-        backgroundMusic.play();
-      } else {
-        backgroundMusic.pause();
-      }
-    });
-  </script>
-
-</body>
+      // Toggle music on or off
+      musicToggle.addEventListener("change", () => {
+        if (musicToggle.checked) {
+          backgroundMusic.play();
+        } else {
+          backgroundMusic.pause();
+        }
+      });
+    </script>
+  </body>
 </html>

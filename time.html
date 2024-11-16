@@ -15,34 +15,50 @@
       /* Set up background image and layout */
       body {
         font-family: Arial, sans-serif;
-        background-image: url("./photo/eisenhover_example.jpg");
+        background-color: #333;
+        /* background-image: url(""); */
         background-size: cover;
         background-attachment: fixed;
         color: #333;
         overflow-y: scroll;
-        line-height: 1.6;
-        padding-bottom: 40px;
+        line-height: 1.7;
+        /* padding-bottom: 100px; */
+        /* padding-top: 150px; */
+        padding: 20px;
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
       }
 
       /* Header with main title and toggle */
       .header {
-        display: flex;
+        font-size: 2.5em;
+        font-weight: bold;
+        /* display: flex; */
+        font-family: "Courier New", Courier, monospace;
+        text-transform: uppercase;
         justify-content: center;
         align-items: center;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        position: fixed;
+        padding: 15px;
+        background: rgba(201, 17, 17, 0.875);
+        color: rgba(4, 1, 46, 0.917);
+        /* position: absolute; */
         top: 0;
         width: 100%;
-        z-index: 1000;
+        /* z-index: 1000; */
         text-align: center;
       }
 
-      .header h1 {
+      /* .header h1 {
         font-size: 2rem;
         flex-grow: 1;
-      }
+      } */
 
       /* Toggle switch styling */
       .toggle-container {
@@ -87,7 +103,7 @@
 
       /* Page content */
       .content {
-        padding: 100px 20px 20px;
+        padding: 50px 20px 50px;
         max-width: 800px;
         margin: auto;
         background: rgba(255, 255, 255, 0.9);
@@ -159,17 +175,13 @@
     </style>
   </head>
   <body>
+    <canvas id="stripCanvas"></canvas>
+
     <!-- Header with Title and Immersive Experience Toggle -->
-    <div class="header">
-      <h1>Manage Time Like a Pro</h1>
-      <div class="toggle-container">
-        <label for="audioToggle">Immersive Experience</label>
-        <div id="audioToggle" class="toggle" onclick="toggleAudio()"></div>
-      </div>
-    </div>
 
     <!-- Main Content Section -->
     <div class="content">
+      <div class="header">Manage Time Like a Pro</div>
       <!-- SMART Goals Section -->
       <div class="SMART">
         <h2>SMART Goals: A Framework for Achieving Success</h2>
@@ -361,6 +373,80 @@
     </div>
     <!-- JavaScript for Toggle Functionality -->
     <script>
+      const canvas = document.getElementById("stripCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+
+      // Strip settings
+      const stripWidth = 50;
+      const speed = 6; // Speed for strips
+      const colors = [
+        "#FF0000",
+        "#00FF00",
+        "#0000FF",
+        "#FFFF00",
+        "#FF00FF",
+        "#00FFFF",
+      ]; // Vibrant solid colors
+      const gradientColors = [
+        "#ff9a9e",
+        "#fad0c4",
+        "#fbc2eb",
+        "#a1c4fd",
+        "#c2e9fb",
+      ]; // Soft gradient colors
+      const columns = Math.ceil(canvas.width / stripWidth) + 1; // Extra strips for seamless transition
+
+      // Initial positions of strips
+      let positions = Array(columns).fill(0);
+
+      // Set the background color
+      canvas.style.backgroundColor = "rgba(1, 4, 19, 1)";
+
+      // Draw function
+      function draw() {
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Loop through each strip (column)
+        for (let col = 0; col < columns; col++) {
+          // Create a gradient effect
+          const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+          const color1 =
+            gradientColors[Math.floor(Math.random() * gradientColors.length)];
+          const color2 =
+            gradientColors[Math.floor(Math.random() * gradientColors.length)];
+          gradient.addColorStop(0, color1);
+          gradient.addColorStop(1, color2);
+
+          // Set the fill style
+          ctx.fillStyle = gradient;
+
+          // Apply glow effect
+          ctx.shadowColor = color2;
+          ctx.shadowBlur = 30;
+
+          // Draw the rectangle (strip)
+          ctx.fillRect(positions[col], 0, stripWidth, canvas.height);
+
+          // Update the x position for movement
+          positions[col] += speed;
+
+          // Reset the x position when it moves out of the canvas
+          if (positions[col] > canvas.width) {
+            positions[col] = -stripWidth; // Restart from the left
+          }
+        }
+
+        // Loop the animation
+        requestAnimationFrame(draw);
+      }
+
+      // Start the animation
+      draw();
+
       let audio; // Declare audio variable outside the function
 
       function toggleAudio() {
