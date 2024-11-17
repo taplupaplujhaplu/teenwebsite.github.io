@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Literacy for Teens</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f0f0f0, #ffffff);
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4CAF50, #43A047);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeIn 2s ease;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.1rem;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    section {
+      padding: 3rem;
+      margin: 1.5rem auto;
+      max-width: 1200px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #4CAF50;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: bold;
+      animation: slideIn 1.5s ease;
+    }
+
+    h3 {
+      color: #333;
+      font-size: 1.8rem;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: #4CAF50;
+      color: white;
+      margin-top: 1rem;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .topic-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .topic-card h3 {
+      margin: 0;
+      color: #4CAF50;
+      font-size: 1.7rem;
+    }
+
+    .topic-card p {
+      font-size: 1.1rem;
+      color: #666;
+      transition: color 0.3s ease;
+    }
+
+    .topic-card:hover p {
+      color: #333;
+    }
+
+    .topic-icon {
+      font-size: 3rem;
+      color: #4CAF50;
+      transition: transform 0.3s;
+    }
+
+    .topic-card:hover .topic-icon {
+      transform: rotate(360deg);
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background: #43A047;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Financial Literacy for Teens</h1>
+   
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Financial Literacy!</h2>
+    <p>Are you ready to take control of your money? Explore the world of financial literacy and set yourself up for success! This site will help you understand everything from budgeting to investments in a fun and easy way.</p>
+  </section>
+
+  <section id="topics">
+    <h2>Key Topics in Financial Literacy</h2>
+
+    <!-- Topic Cards -->
+    <div class="topic-card">
+      <span class="topic-icon">💡</span>
+      <div>
+        <h3>What is Financial Literacy?</h3>
+        <p>Financial literacy means understanding how money works. It teaches you how to manage your finances, make smart decisions, and plan for the future. Knowing the basics of money management, such as budgeting, saving, and investing, will set you on the path to financial success.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">💰</span>
+      <div>
+        <h3>Budgeting Skills</h3>
+        <p>Budgeting is a tool that helps you manage your money. By knowing where your money is going, you can save more and avoid debt! A budget allows you to track your income and expenses, helping you make better decisions about where your money goes and how to save for future goals.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🏦</span>
+      <div>
+        <h3>Understanding Banking</h3>
+        <p>Banks are where you store your money safely. Learn about checking and savings accounts, and how they help you manage your finances. Checking accounts are typically used for everyday transactions, while savings accounts allow you to earn interest on your deposits.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">📊</span>
+      <div>
+        <h3>Introduction to Investments</h3>
+        <p>Investing is a way to grow your money by putting it into stocks, bonds, or mutual funds. It's important to understand risk and reward! Start by learning about the different types of investments, and consider starting small to get comfortable with the process before making bigger decisions.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">💳</span>
+      <div>
+        <h3>Credit and Credit Scores</h3>
+        <p>Your credit score helps lenders decide if you can borrow money. It's important to keep it healthy by paying your bills on time! A good credit score can help you secure loans for big purchases like a car or a house. Learn how credit cards work, and be sure to manage your spending wisely.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🔒</span>
+      <div>
+        <h3>Digital Payments & Online Safety</h3>
+        <p>With the rise of digital payments, it's crucial to understand how to use them safely. Learn about mobile wallets, online banking, and protecting your financial information from fraud. Digital payments make transactions easier, but it's important to stay cautious and protect your accounts with strong passwords and two-factor authentication.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🎯</span>
+      <div>
+        <h3>Setting Financial Goals</h3>
+        <p>Setting financial goals is key to achieving financial success. Learn how to create short-term and long-term goals and track your progress! Whether saving for a new phone or planning for college, financial goals keep you motivated and focused on your future.</p>
+      </div>
+    </div>
+
+    <!-- New Topics Added -->
+    <div class="topic-card">
+      <span class="topic-icon">💼</span>
+      <div>
+        <h3>Savings Plans & Emergency Funds</h3>
+        <p>Learn about the importance of having an emergency fund and how to start saving for unexpected expenses. Building a savings plan helps protect your financial future in times of need.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">📉</span>
+      <div>
+        <h3>Understanding Taxes</h3>
+        <p>Taxes can be complicated, but it's essential to understand how they affect your income and savings. Learn about income tax, sales tax, and other types of taxes, and why paying taxes is important for society.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🎓</span>
+      <div>
+        <h3>Student Loans & Scholarships</h3>
+        <p>Learn how to finance your education through student loans and scholarships. Understand the importance of budgeting for college and how to manage debt after graduation.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🛡️</span>
+      <div>
+        <h3>Insurance Basics</h3>
+        <p>Insurance helps protect you from financial loss. Whether it's health, car, or life insurance, learn how different types of insurance work and why they are crucial to protecting your financial future.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">📈</span>
+      <div>
+        <h3>Entrepreneurship & Side Hustles</h3>
+        <p>Starting a business or side hustle can be a great way to earn extra money. Learn about different ways to become an entrepreneur and how to manage your small business finances effectively.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">💳</span>
+      <div>
+        <h3>Debt Management</h3>
+        <p>Learn how to manage and reduce your debts. Know the difference between good and bad debt, and learn strategies for paying off loans, credit cards, and other liabilities.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">📅</span>
+      <div>
+        <h3>Retirement Planning</h3>
+        <p>It’s never too early to start planning for retirement! Learn about different retirement accounts and how to save money for the future, even while you're young.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">💎</span>
+      <div>
+        <h3>Wealth Building Strategies</h3>
+        <p>Understand the strategies used by wealthy individuals to grow their wealth. Learn about investment strategies, asset allocation, and building long-term wealth.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">📉</span>
+      <div>
+        <h3>Understanding the Stock Market</h3>
+        <p>Explore how the stock market works and how you can start investing in stocks. Learn about risk management, buying shares, and diversifying your portfolio to minimize risk.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🏠</span>
+      <div>
+        <h3>Real Estate Investing</h3>
+        <p>Learn how investing in real estate can help you build wealth over time. Understand the pros and cons of real estate investment and how to get started in the market.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🔥</span>
+      <div>
+        <h3>Financial Independence & Early Retirement (FIRE)</h3>
+        <p>Discover the FIRE movement and how saving aggressively and investing wisely can help you retire early and achieve financial independence.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">💻</span>
+      <div>
+        <h3>Cryptocurrency and Blockchain</h3>
+        <p>Understand the world of cryptocurrency and blockchain technology. Learn how digital currencies work and their potential to change the global financial system.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">🚨</span>
+      <div>
+        <h3>Financial Scams & How to Avoid Them</h3>
+        <p>Learn about common financial scams and how to protect yourself from fraud. Know what red flags to look out for and how to avoid losing money.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">📚</span>
+      <div>
+        <h3>The Importance of Financial Education</h3>
+        <p>Financial education is the foundation of your financial future. Learn why understanding personal finance is crucial for making smart decisions about money.</p>
+      </div>
+    </div>
+
+    <div class="topic-card">
+      <span class="topic-icon">❤️</span>
+      <div>
+        <h3>Philanthropy & Giving Back</h3>
+        <p>Discover the importance of giving back to your community and the world. Learn about charitable donations, volunteering, and making a positive impact through your financial decisions.</p>
+      </div>
+    </div>
+
+  </section>
+
+  
+
+  <button id="topBtn">Top</button>
+
+  <script>
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("topBtn").style.display = "block";
+      } else {
+        document.getElementById("topBtn").style.display = "none";
+      }
+    };
+
+    document.getElementById("topBtn").onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
+</body>
+</html>
