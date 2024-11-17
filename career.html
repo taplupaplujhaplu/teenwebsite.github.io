@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Career Preparation Guide for Teens</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', Arial, sans-serif;
+      background-color: #eef2f3;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 2rem;
+     
+    }
+
+
+    nav {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    section:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      color: #4CAF50;
+      cursor: pointer;
+    }
+
+    .content {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .content p {
+      line-height: 1.6;
+    }
+
+ 
+    .quiz {
+      margin-top: 20px;
+      background: #e6f7ff;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .quiz input {
+      margin: 10px 0;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    .fun-fact {
+      background: #ffeb3b;
+      padding: 10px;
+      border-radius: 8px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Career Preparation Guide for Teens
+</header>
+
+
+
+<div class="container">
+
+  <section id="self-discovery">
+    <h2 onclick="toggleContent(this)">1. Self-Discovery</h2>
+    <div class="content">
+      <p>Discover what makes you unique! Try different hobbies, take personality tests, and reflect on your goals. What excites you the most?</p>
+      <p><strong>Activity:</strong> Write down your top 3 interests and what you like about them.</p>
+    </div>
+  </section>
+
+  <section id="career-options">
+    <h2 onclick="toggleContent(this)">2. Exploring Career Options</h2>
+    <div class="content">
+      <p>Explore career opportunities in tech, healthcare, or creative industries. Try virtual career fairs and internships!</p>
+      <p><strong>Interactive:</strong> Use <a href="https://www.mynextmove.org/" target="_blank">My Next Move</a> for exploring careers.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 onclick="toggleContent(this)">3. Building Skills</h2>
+    <div class="content">
+      <p>Focus on soft skills like communication, leadership, and teamwork. Pick up hard skills like coding, writing, or designing.</p>
+      <p><strong>Fun Fact:</strong> Learning new skills builds your brain power!</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 onclick="toggleContent(this)">4. Education and Training</h2>
+    <div class="content">
+      <p>Education doesn’t mean just schools! Try online courses or vocational training too. Learn something new every day.</p>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2 onclick="toggleContent(this)">5. Career Planning Tools</h2>
+    <div class="content">
+      <p>Planning is the key! Build resumes, prepare portfolios, and do mock interviews to succeed in your dream job.</p>
+      <p><strong>Quiz:</strong> What’s the most important section on a resume?</p>
+      <div class="quiz">
+        <label>
+          <input type="radio" name="resume-quiz" value="1"> Work Experience<br>
+        </label>
+        <label>
+          <input type="radio" name="resume-quiz" value="2"> Hobbies<br>
+        </label>
+        <button onclick="checkAnswer()">Submit</button>
+        <p class="answer">Correct! Experience is key.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="financial-literacy">
+    <h2 onclick="toggleContent(this)">6. Financial Literacy</h2>
+    <div class="content">
+      <p>Money management is super important. Learn how to save, budget, and invest your earnings wisely!</p>
+      <div class="fun-fact">Saving ₹100/day can make you ₹36500 richer in a year!</div>
+    </div>
+  </section>
+
+  <section id="mental-health">
+    <h2 onclick="toggleContent(this)">7. Mental Health and Work-Life Balance</h2>
+    <div class="content">
+      <p>Good mental health is key to success. Try yoga, mindfulness, and take breaks to recharge your mind!</p>
+    </div>
+  </section>
+
+  <section id="networking">
+    <h2 onclick="toggleContent(this)">8. Networking and Mentorship</h2>
+    <div class="content">
+      <p>Meet new people, learn from mentors, and grow your circle of inspiration. Networking is like planting seeds of opportunity!</p>
+    </div>
+  </section>
+
+  <section id="entrepreneurship">
+    <h2 onclick="toggleContent(this)">9. Entrepreneurship and Innovation</h2>
+    <div class="content">
+      <p>Turn your ideas into reality! Start small ventures or side projects to practice business skills early.</p>
+    </div>
+  </section>
+
+  <section id="digital-presence">
+    <h2 onclick="toggleContent(this)">10. Digital Presence and Online Safety</h2>
+    <div class="content">
+      <p>Create a safe and professional online image. Avoid oversharing and keep your passwords secure!</p>
+    </div>
+  </section>
+
+</div>
+
+
+<script>
+  function toggleContent(element) {
+    const content = element.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function checkAnswer() {
+    const radios = document.querySelectorAll('input[name="resume-quiz"]');
+    let selectedValue;
+    for (const radio of radios) {
+      if (radio.checked) {
+        selectedValue = radio.value;
+        break;
+      }
+    }
+    const answer = document.querySelector('.answer');
+    if (selectedValue === '1') {
+      answer.style.display = 'block';
+    } else {
+      answer.textContent = 'Try again!';
+      answer.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
