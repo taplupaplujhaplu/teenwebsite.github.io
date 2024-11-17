@@ -18,16 +18,20 @@
         padding: 0;
         height: 100%;
         overflow-x: hidden; /* Prevent horizontal scrolling */
+        box-sizing: border-box;
       }
 
+      /* Flexbox setup for the entire body */
       body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensures body takes full height of the screen */
         background-image: url("video/Untitled design.gif"); /* Update with the correct path */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         color: white;
         font-family: "Brush Script MT", cursive;
-        font-stretch: ultra-expanded;
         cursor: url('photo/stick48.jpg'), auto; /* Default custom cursor */
       }
 
@@ -35,70 +39,70 @@
       .header {
         background-color: rgba(0, 246, 246);
         color: rgb(8, 63, 63);
-        padding: 10px;
+        padding: 20px;
         text-align: center;
-        font-size: 50px;
+        font-size: 3rem;
         font-weight: bold;
       }
 
       .content {
-        margin-top: 50px; /* Adjust according to the height of your top bar */
+        margin-top: 20px;
         display: flex;
-        align-items: center;
-        justify-content: space-around;
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+        justify-content: space-evenly;
+        gap: 20px;
+        padding: 0 10px;
+        flex-grow: 1; /* Allows content to take available space */
       }
 
       .paragraph {
-        width: 25%;
-        height: 380px;
-        padding: 10px;
-        background-color: rgb(0, 246, 246, 0.7);
+        flex: 1 1 25%; /* Flexible growth and shrink with minimum width */
+        max-width: 400px;
+        min-width: 300px;
+        padding: 15px;
+        background-color: rgba(0, 246, 246, 0.7);
         border: 5px solid rgb(214, 3, 246);
-        margin: 0;
         border-radius: 20px;
+        text-align: center;
       }
 
       .image-button {
         text-align: center;
+        flex: 1 1 40%; /* Adjust the image container flex size */
+        min-width: 300px;
       }
 
       .image-button img {
-        width: 500px;
+        width: 100%;
+        max-width: 500px;
         height: auto;
         border: none;
         cursor: url('photo/stick48.jpg'), auto; /* Ensure custom cursor stays */
         transition: transform 0.3s ease;
       }
 
-      /* Custom cursor for hover over the image */
       .image-button img:hover {
-        cursor: url('photo/stick48.jpg'), auto; /* Custom cursor stays */
-        transform: translateY(-50px); /* Moves the image up by 50px */
+        transform: translateY(-10px); /* Subtle hover effect */
       }
 
-      .downward {
-        text-align: center;
-      }
-
-      /* Style the footer with flexbox */
+      /* Footer styles */
       .footer {
-        background-color: rgba(29, 71, 169); /* Semi-transparent black */
+        background-color: rgba(29, 71, 169, 0.8); /* Semi-transparent background */
         color: rgb(41, 223, 165);
-        padding: 4px 10px; /* Reduced padding for a slimmer appearance */
+        padding: 10px 20px;
         font-weight: bold;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 50px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
         box-sizing: border-box;
+        margin-top: 20px; /* Ensures there's space between the content and the footer */
       }
 
       .contact-info {
-        font-size: 20px; /* Increased font size for email */
-        line-height: 1; /* Adjust line height for better alignment */
+        font-size: 1rem;
+        line-height: 1.2;
       }
 
       .contact-info a {
@@ -109,12 +113,12 @@
 
       .social-icons {
         display: flex;
-        gap: 15px; /* Space between icons */
+        gap: 15px;
       }
 
       .social-icons a {
         color: rgb(70, 211, 211);
-        font-size: 20px; /* Icon size */
+        font-size: 1.5rem;
         transition: color 0.3s;
       }
 
@@ -124,10 +128,44 @@
 
       .paragraph {
         color: rgb(246, 0, 0);
-        font-family: courier;
-        font-size: 160%;
+        font-family: Courier, monospace;
+        font-size: 1.2rem;
       }
 
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .header {
+          font-size: 2rem;
+          padding: 10px;
+        }
+
+        .paragraph {
+          font-size: 1rem;
+        }
+
+        .footer {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .paragraph {
+          font-size: 0.9rem;
+        }
+
+        .image-button img {
+          max-width: 300px;
+        }
+
+        .footer {
+          padding: 15px 10px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -142,8 +180,7 @@
           <b>
             Welcome to our immersive experience SITE! On the next page, you'll find a
             toggle switch designed to transform your visit. Switch it on to
-            enjoy music that enhances your browsing adventure, making every
-            moment more enjoyable. Turn up the vibes and let the journey begin!
+            enjoy music that enhances your browsing adventure. Turn up the vibes and let the journey begin!
           </b>
         </p>
       </div>
@@ -163,7 +200,6 @@
         </p>
       </div>
     </div>
-
 
     <!-- Footer with email on the left and icons on the right -->
     <div class="footer">
@@ -187,10 +223,5 @@
         </a>
       </div>
     </div>
-
-    <!-- Custom Cursor (Image version) -->
-    <script>
-      // Custom cursor image will be set via CSS.
-    </script>
   </body>
 </html>
