@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* Base reset */
       * {
@@ -14,19 +26,18 @@
 
       /* Set up background image and layout */
       body {
-        font-family: Arial, sans-serif;
-        /* background-image: url(""); */
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
         overflow-y: scroll;
-        line-height: 1.7;
-        /* padding-bottom: 100px; */
-        /* padding-top: 150px; */
+        line-height: 1.9;
         padding: 20px;
         text-align: center;
       }
 
       canvas {
         background-image: url(./photo/th.jpeg);
-        opacity: 0.2;
+        opacity: 0.45;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -41,95 +52,103 @@
 
       /* Header with main title and toggle */
       .header {
-        font-size: 2.5em;
+        font-size: 3.5em;
         font-weight: bold;
-        /* display: flex; */
-        font-family: "Courier New", Courier, monospace;
+        margin: auto;
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
         text-transform: uppercase;
-        justify-content: center;
-        align-items: center;
-        padding: 15px;
-        background: rgba(201, 17, 17, 0.875);
-        color: rgba(4, 1, 46, 0.917);
-        /* position: absolute; */
-        top: 0;
+        background: rgba(150, 88, 225, 0.887);
+        color: rgba(79, 215, 201, 0.794);
         width: 100%;
-        /* z-index: 1000; */
+        height: 75px;
         text-align: center;
+        margin-top: 19px;
+        margin-bottom: 65px;
       }
-
-      /* .header h1 {
-        font-size: 2rem;
-        flex-grow: 1;
-      } */
 
       /* Toggle switch styling */
       .toggle-container {
-        position: absolute;
-        right: 20px;
+        position: fixed;
+        top: 35px;
+        right: 50px;
         display: flex;
         align-items: center;
+        z-index: 1000;
       }
 
-      .toggle-container label {
+      .toggle-label {
+        font-size: 1em;
+        color: #070776;
+        font-weight: 600;
         margin-right: 10px;
       }
 
-      .toggle {
+      .toggle-switch {
         position: relative;
+        display: inline-block;
         width: 50px;
         height: 24px;
-        background-color: #ccc;
-        border-radius: 24px;
-        cursor: pointer;
       }
 
-      .toggle::before {
-        content: "";
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
         position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 24px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
         background-color: white;
-        top: 2px;
-        left: 2px;
-        transition: 0.3s;
+        transition: 0.4s;
+        border-radius: 50%;
       }
 
-      .toggle.active {
-        background-color: #4caf50;
+      input:checked + .slider {
+        background-color: #1152a8;
       }
 
-      .toggle.active::before {
-        left: 26px;
+      input:checked + .slider:before {
+        transform: translateX(26px);
       }
 
-      .root{
+      .root {
         margin: auto;
-        max-width: 1500px;
-
+        max-width: 1300px;
       }
 
       /* Page content */
       .content-item {
-        padding: 20px 20px 20px;
-        /* opacity: 1; */
-        background: rgba(250, 249, 249, 0);
-        color:black;
-        margin-top: 35px;
-        /* margin: auto; */
+        padding: 40px 50px 30px 50px;
+        font-size: 17px;
+        background: rgba(250, 249, 249, 0.865);
+        color: rgb(45, 45, 3);
+        margin-top: 15px;
         display: block;
-        align-content: center;
-        /* align-items: center; */
-        /* align-content: center; */
-        /* border-radius: 8px; */
-        /* border-width: ; */
-        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
       }
 
       .content-item h2 {
         font-size: 1.8rem;
-        color: #4caf50;
+        color: #b063dac9;
         margin-bottom: 10px;
         text-align: center;
       }
@@ -193,14 +212,26 @@
   <body>
     <canvas id="stripCanvas"></canvas>
 
+    <div class="toggle-container">
+      <span class="toggle-label">Immersive <br />Experience</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="musicToggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <!-- Audio Element for Background Music -->
+    <audio id="backgroundMusic" loop>
+      <source
+        src="music/Voice OF Black Hat Hackers Deface Page Music - ladla101 (youtube).mp3"
+        type="audio/mp3"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
     <div class="root">
 
-      <!-- Header with Title and Immersive Experience Toggle -->
-
       <!-- Main Content Section -->
-      <div class="content-item">
-        <div class="header">Manage Time Like a Pro</div>
-      </div>
+      <div class="header">Manage Time Like a Pro</div>
 
       <div class="content-item">
         <h2>SMART Goals: A Framework for Achieving Success</h2>
@@ -289,10 +320,6 @@
             <td>"Limit time on social media."</td>
           </tr>
         </table>
-        <!-- <img
-          src="photo/eisenhover_example.jpg"
-          alt="Eisenhower matrix example"
-        /> -->
         <p>
           Know more:
           <a
@@ -392,27 +419,26 @@
     </div>
     <!-- JavaScript for Toggle Functionality -->
     <script>
+      // Music control functionality
+      const musicToggle = document.getElementById("musicToggle");
+      const backgroundMusic = document.getElementById("backgroundMusic");
 
-      let audio; // Declare audio variable outside the function
+      // Attempt to autoplay music on page load
+      window.addEventListener("load", () => {
+        backgroundMusic.play().catch(() => {
+          // If autoplay fails (due to browser restrictions), disable the toggle
+          musicToggle.checked = false;
+        });
+      });
 
-      function toggleAudio() {
-        const toggle = document.getElementById("audioToggle");
-
-        // Initialize audio only once if it hasn't been initialized yet
-        if (!audio) {
-          audio = new Audio("./music/oggy.mp3");
-          audio.loop = true;
-        }
-
-        // Check if toggle is active; if so, pause audio, else play audio
-        if (toggle.classList.contains("active")) {
-          audio.pause();
-          toggle.classList.remove("active");
+      // Toggle music on or off
+      musicToggle.addEventListener("change", () => {
+        if (musicToggle.checked) {
+          backgroundMusic.play();
         } else {
-          audio.play();
-          toggle.classList.add("active");
+          backgroundMusic.pause();
         }
-      }
+      });
     </script>
   </body>
 </html>
