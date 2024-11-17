@@ -15,19 +15,22 @@
       /* Set up background image and layout */
       body {
         font-family: Arial, sans-serif;
-        background-color: #333;
         /* background-image: url(""); */
-        background-size: cover;
-        background-attachment: fixed;
-        color: #333;
         overflow-y: scroll;
         line-height: 1.7;
         /* padding-bottom: 100px; */
         /* padding-top: 150px; */
         padding: 20px;
+        text-align: center;
       }
 
       canvas {
+        background-image: url(./photo/th.jpeg);
+        opacity: 0.2;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
         position: fixed;
         top: 0;
         left: 0;
@@ -101,25 +104,38 @@
         left: 26px;
       }
 
-      /* Page content */
-      .content {
-        padding: 50px 20px 50px;
-        max-width: 800px;
+      .root{
         margin: auto;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        max-width: 1500px;
+
       }
 
-      .content h2 {
+      /* Page content */
+      .content-item {
+        padding: 20px 20px 20px;
+        /* opacity: 1; */
+        background: rgba(250, 249, 249, 0);
+        color:black;
+        margin-top: 35px;
+        /* margin: auto; */
+        display: block;
+        align-content: center;
+        /* align-items: center; */
+        /* align-content: center; */
+        /* border-radius: 8px; */
+        /* border-width: ; */
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+      }
+
+      .content-item h2 {
         font-size: 1.8rem;
         color: #4caf50;
         margin-bottom: 10px;
         text-align: center;
       }
 
-      .content p,
-      .content ul {
+      .content-item p,
+      .content-item ul {
         margin-bottom: 20px;
         text-align: left;
       }
@@ -177,13 +193,16 @@
   <body>
     <canvas id="stripCanvas"></canvas>
 
-    <!-- Header with Title and Immersive Experience Toggle -->
+    <div class="root">
 
-    <!-- Main Content Section -->
-    <div class="content">
-      <div class="header">Manage Time Like a Pro</div>
-      <!-- SMART Goals Section -->
-      <div class="SMART">
+      <!-- Header with Title and Immersive Experience Toggle -->
+
+      <!-- Main Content Section -->
+      <div class="content-item">
+        <div class="header">Manage Time Like a Pro</div>
+      </div>
+
+      <div class="content-item">
         <h2>SMART Goals: A Framework for Achieving Success</h2>
         <p>
           SMART is a powerful goal-setting method that helps you set clear,
@@ -224,7 +243,7 @@
       </div>
 
       <!-- Task Prioritization with Eisenhower Matrix -->
-      <div class="Task-Prioritization">
+      <div class="content-item">
         <h2>
           Task Prioritization: Manage Multiple Responsibilities Effectively
         </h2>
@@ -270,10 +289,10 @@
             <td>"Limit time on social media."</td>
           </tr>
         </table>
-        <img
+        <!-- <img
           src="photo/eisenhover_example.jpg"
           alt="Eisenhower matrix example"
-        />
+        /> -->
         <p>
           Know more:
           <a
@@ -283,7 +302,7 @@
           >
         </p>
       </div>
-      <div class="Study-Skills-Planning">
+      <div class="content-item">
         <h2>Study Skills and Planning: Build Effective Study Habits</h2>
         <p>
           Creating a study plan and adopting effective habits can help you stay
@@ -328,7 +347,7 @@
         </p>
       </div>
 
-      <div class="Digital-Tools-Organization">
+      <div class="content-item">
         <h2>Digital Tools for Organization: Stay on Track with Apps</h2>
         <p>
           Digital tools can help you organize tasks, track progress, and stay
@@ -373,79 +392,6 @@
     </div>
     <!-- JavaScript for Toggle Functionality -->
     <script>
-      const canvas = document.getElementById("stripCanvas");
-      const ctx = canvas.getContext("2d");
-
-      canvas.height = window.innerHeight;
-      canvas.width = window.innerWidth;
-
-      // Strip settings
-      const stripWidth = 50;
-      const speed = 6; // Speed for strips
-      const colors = [
-        "#FF0000",
-        "#00FF00",
-        "#0000FF",
-        "#FFFF00",
-        "#FF00FF",
-        "#00FFFF",
-      ]; // Vibrant solid colors
-      const gradientColors = [
-        "#ff9a9e",
-        "#fad0c4",
-        "#fbc2eb",
-        "#a1c4fd",
-        "#c2e9fb",
-      ]; // Soft gradient colors
-      const columns = Math.ceil(canvas.width / stripWidth) + 1; // Extra strips for seamless transition
-
-      // Initial positions of strips
-      let positions = Array(columns).fill(0);
-
-      // Set the background color
-      canvas.style.backgroundColor = "rgba(1, 4, 19, 1)";
-
-      // Draw function
-      function draw() {
-        // Clear the canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Loop through each strip (column)
-        for (let col = 0; col < columns; col++) {
-          // Create a gradient effect
-          const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-          const color1 =
-            gradientColors[Math.floor(Math.random() * gradientColors.length)];
-          const color2 =
-            gradientColors[Math.floor(Math.random() * gradientColors.length)];
-          gradient.addColorStop(0, color1);
-          gradient.addColorStop(1, color2);
-
-          // Set the fill style
-          ctx.fillStyle = gradient;
-
-          // Apply glow effect
-          ctx.shadowColor = color2;
-          ctx.shadowBlur = 30;
-
-          // Draw the rectangle (strip)
-          ctx.fillRect(positions[col], 0, stripWidth, canvas.height);
-
-          // Update the x position for movement
-          positions[col] += speed;
-
-          // Reset the x position when it moves out of the canvas
-          if (positions[col] > canvas.width) {
-            positions[col] = -stripWidth; // Restart from the left
-          }
-        }
-
-        // Loop the animation
-        requestAnimationFrame(draw);
-      }
-
-      // Start the animation
-      draw();
 
       let audio; // Declare audio variable outside the function
 
