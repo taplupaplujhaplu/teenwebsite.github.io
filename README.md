@@ -6,3 +6,4 @@ This website will help all the tennagers in some simple but yet complicated topi
 Topics which are essential but not a part of the general conversation among teens.
 topics included are :- (communication skills , Time Management , Financial Literacy , Digital Security  , Careeer Preparation)
 Teens can visit and get some clearity in lives.
+![Screenshot 2025-01-24 141335](https://github.com/user-attachments/assets/45477191-efbb-424f-b080-578b4f950e58)
