@@ -19,27 +19,8 @@
       text-align: center;
       padding: 1.5rem 0;
       font-size: 2rem;
-     
-    }
-
-
-    nav {
-      background: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .container {
@@ -73,7 +54,6 @@
       line-height: 1.6;
     }
 
- 
     .quiz {
       margin-top: 20px;
       background: #e6f7ff;
@@ -112,6 +92,16 @@
       border-radius: 8px;
       font-style: italic;
     }
+
+    .external-links a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .external-links a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
@@ -120,20 +110,17 @@
   Career Preparation Guide for Teens
 </header>
 
-
-
 <div class="container">
 
   <section id="self-discovery">
     <h2 onclick="toggleContent(this)">1. Self-Discovery</h2>
     <div class="content">
-      <p>Self-discovery is an ongoing process that helps you understand your true essence. It’s about exploring what excites you, what gives you purpose, and what activities make you feel fulfilled. Whether it’s through trying new hobbies, taking personality tests, or journaling your thoughts, the goal is to uncover your passions and strengths. By gaining self-awareness, you will be better equipped to make decisions that align with your true self, helping you lead a more authentic and fulfilling life.</p>
-      <p><strong>Activity:</strong> Write down your top 3 interests and reflect on why they stand out to you.</p>
-      <p><strong>Example:</strong></p>
+      <p>Understanding your interests, strengths, and values is crucial for choosing the right career. Spend time reflecting on what excites you and where you excel.</p>
+      <p><strong>Study Material:</strong></p>
       <ul>
-        <li><strong>Interest 1:</strong> Cooking — <em>What I like about it: It brings out my creativity and allows me to express myself through food. Cooking is also relaxing and rewarding.</em></li>
-        <li><strong>Interest 2:</strong> Playing Guitar — <em>What I like about it: It’s a great way to escape and unwind, and learning new songs keeps my mind active and focused.</em></li>
-        <li><strong>Interest 3:</strong> Hiking — <em>What I like about it: Being in nature makes me feel at peace and helps clear my mind. Plus, I love the physical challenge!</em></li>
+        <li><strong>Interest Tests:</strong> Use tools like <a href="https://www.mynextmove.org/explore/ip" target="_blank">MyNextMove Interest Profiler</a> to help you identify your interests.</li>
+        <li><strong>Strengths Assessment:</strong> Try StrengthsFinder or CliftonStrengths to discover your natural talents.</li>
+        <li><strong>Values Clarification:</strong> Make a list of values that matter most to you (e.g., creativity, stability, helping others).</li>
       </ul>
     </div>
   </section>
@@ -141,30 +128,53 @@
   <section id="career-options">
     <h2 onclick="toggleContent(this)">2. Exploring Career Options</h2>
     <div class="content">
-      <p>In today’s fast-paced world, there are endless career opportunities across various industries like tech, healthcare, and creative fields. Exploring these options early on can provide you with valuable insights into which direction to take. It’s important to keep an open mind and consider roles that align with both your interests and skills. Virtual career fairs, internships, and informational interviews are excellent ways to learn about different professions and get a taste of what each career entails before committing.</p>
-      <p><strong>Interactive:</strong> Use <a href="https://www.mynextmove.org/" target="_blank">My Next Move</a> to explore different careers. You can input your interests, values, and skills to find job suggestions, salary ranges, and potential growth in various fields.</p>
+      <p>Learn about different career fields, the skills they require, and the opportunities available. You can use online platforms to explore various roles in depth.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Career Exploration Tools:</strong> Use <a href="https://www.mynextmove.org/" target="_blank">MyNextMove</a> to explore career options.</li>
+        <li><strong>Job Shadowing:</strong> Reach out to professionals to shadow them for a day to see what a job entails.</li>
+        <li><strong>Internships:</strong> Sign up for internships to gain hands-on experience.</li>
+      </ul>
+      <p><strong>Interactive:</strong> Take the <a href="https://www.mynextmove.org/explore/ip" target="_blank">Interest Profiler</a> and find careers aligned with your interests.</p>
     </div>
   </section>
 
   <section id="skills">
     <h2 onclick="toggleContent(this)">3. Building Skills</h2>
     <div class="content">
-      <p>Skills are the tools that shape your personal and professional success. Building both <strong>soft skills</strong> (such as communication, leadership, and problem-solving) and <strong>hard skills</strong> (like coding, writing, and design) is vital for staying competitive in any career. Soft skills are necessary to navigate social situations and workplace dynamics, while hard skills help you perform technical tasks. The more diverse your skill set, the more opportunities you will have.</p>
-      <p><strong>Fun Fact:</strong> Studies show that learning new skills not only boosts your confidence but also enhances your brain’s ability to adapt, making you more flexible and resilient in various situations.</p>
+      <p>Focus on both hard and soft skills that will set you apart in your chosen field. Some skills you can focus on include leadership, communication, coding, and data analysis.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Hard Skills:</strong> Learn specific skills like coding (Python, JavaScript) or graphic design (using Adobe tools).</li>
+        <li><strong>Soft Skills:</strong> Practice leadership, teamwork, and problem-solving by participating in group activities or leadership programs.</li>
+        <li><strong>Online Courses:</strong> Take free online courses on platforms like <a href="https://www.coursera.org/" target="_blank">Coursera</a> and <a href="https://www.udemy.com/" target="_blank">Udemy</a> to enhance your skills.</li>
+      </ul>
     </div>
   </section>
 
   <section id="education">
     <h2 onclick="toggleContent(this)">4. Education and Training</h2>
     <div class="content">
-      <p>Education is a lifelong journey, and it’s not just limited to traditional schooling. You can seek knowledge through online courses, vocational programs, or specialized training that caters to your specific interests or career aspirations. Platforms like Coursera, Udemy, and LinkedIn Learning offer access to a wide range of subjects. The more you learn, the better you can adapt to changing trends and advance in your career. Continuous learning also helps you stay curious and motivated in your personal life.</p>
+      <p>Education is essential for developing your skills and knowledge. Explore options like traditional college degrees, vocational training, or certifications in your field of interest.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Certifications:</strong> Look into certifications from recognized organizations like <a href="https://www.coursera.org/professional-certificates" target="_blank">Coursera Certificates</a> or <a href="https://www.edx.org/professional-certificate" target="_blank">edX Professional Certificates</a>.</li>
+        <li><strong>Vocational Training:</strong> If you’re interested in hands-on work, explore vocational training in fields like plumbing, electrical, and culinary arts.</li>
+        <li><strong>College Degrees:</strong> Research universities that offer the programs you’re interested in.</li>
+      </ul>
     </div>
   </section>
 
   <section id="tools">
     <h2 onclick="toggleContent(this)">5. Career Planning Tools</h2>
     <div class="content">
-      <p>Career planning is essential for achieving your professional goals. Building a well-crafted resume that highlights your strengths, experience, and accomplishments is key to making a strong impression on potential employers. An impressive portfolio showcases your skills and projects, and practicing mock interviews prepares you to handle real-life job interviews confidently. These tools are vital for securing job opportunities and positioning yourself for success.</p>
+      <p>Career planning involves understanding your goals and developing a roadmap to achieve them. Use online tools to build your resume, search for internships, and prepare for interviews.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Resumes:</strong> Use <a href="https://www.canva.com/resumes/templates/" target="_blank">Canva</a> to create visually appealing resumes.</li>
+        <li><strong>Job Search:</strong> Use platforms like <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> and <a href="https://www.indeed.com/" target="_blank">Indeed</a> to find internships and job openings.</li>
+        <li><strong>Mock Interviews:</strong> Practice interviews using platforms like <a href="https://www.pramp.com/" target="_blank">Pramp</a> for coding roles or any job-specific mock interview platform.</li>
+      </ul>
       <p><strong>Quiz:</strong> What’s the most important section on a resume?</p>
       <div class="quiz">
         <label>
@@ -182,42 +192,68 @@
   <section id="financial-literacy">
     <h2 onclick="toggleContent(this)">6. Financial Literacy</h2>
     <div class="content">
-      <p>Mastering money management is crucial for securing your future. Learning how to save, budget, and invest wisely will help you make informed decisions and achieve financial independence. Whether it’s managing day-to-day expenses or planning for long-term goals, understanding your finances allows you to make smarter choices. You can start by creating a simple budget, tracking your spending, and learning the basics of investing to build wealth over time.</p>
-      <p><strong>Fun Fact:</strong> Saving just ₹100 a day can make you ₹36,500 richer in a year—proof that small, consistent habits can lead to big results!</p>
+      <p>Learning how to manage money wisely is essential for your future. Start with budgeting and saving and learn how to make smart financial decisions.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Budgeting:</strong> Use apps like <a href="https://www.mint.com/" target="_blank">Mint</a> to track your spending.</li>
+        <li><strong>Saving:</strong> Open a savings account and aim to save at least 10% of your income or allowance.</li>
+        <li><strong>Investing:</strong> Learn about the stock market and other investment opportunities.</li>
+      </ul>
     </div>
   </section>
 
   <section id="mental-health">
     <h2 onclick="toggleContent(this)">7. Mental Health and Work-Life Balance</h2>
     <div class="content">
-      <p>Good mental health is essential for thriving in both your personal and professional life. Burnout, stress, and fatigue can impede your productivity and overall well-being. It’s essential to find ways to de-stress and recharge, whether through hobbies, exercise, or relaxation techniques. Practices like yoga, meditation, and mindfulness can help reduce anxiety and improve focus. Taking breaks, setting boundaries between work and personal life, and prioritizing self-care are all key to sustaining your mental health.</p>
+      <p>Maintaining mental health is crucial to success. Ensure you balance work, study, and personal time, and practice mindfulness to avoid burnout.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Mindfulness:</strong> Practice deep breathing exercises or meditation using apps like <a href="https://www.headspace.com/" target="_blank">Headspace</a>.</li>
+        <li><strong>Time Management:</strong> Use tools like <a href="https://www.trello.com/" target="_blank">Trello</a> or <a href="https://www.asana.com/" target="_blank">Asana</a> to stay organized and prevent stress.</li>
+        <li><strong>Seeking Help:</strong> Talk to a counselor or mental health professional if you feel overwhelmed.</li>
+      </ul>
     </div>
   </section>
 
   <section id="networking">
     <h2 onclick="toggleContent(this)">8. Networking and Mentorship</h2>
     <div class="content">
-      <p>Building a strong network of professional connections can open doors to new opportunities and growth. Networking isn’t just about exchanging business cards; it’s about fostering genuine relationships and learning from others. A mentor can provide guidance, offer career advice, and introduce you to new opportunities. The more people you connect with, the more possibilities you’ll have for personal and professional development. Think of networking as planting seeds—it’s about nurturing relationships that will bear fruit in the future.</p>
+      <p>Building relationships with others in your field can open doors for new opportunities. Networking helps you learn from experienced individuals and stay connected to your industry.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>LinkedIn:</strong> Build a professional profile on LinkedIn and start connecting with professionals.</li>
+        <li><strong>Networking Events:</strong> Attend conferences and career fairs to meet potential mentors and employers.</li>
+        <li><strong>Mentorship:</strong> Reach out to professionals and ask for mentorship or advice.</li>
+      </ul>
     </div>
   </section>
 
   <section id="entrepreneurship">
     <h2 onclick="toggleContent(this)">9. Entrepreneurship and Innovation</h2>
     <div class="content">
-      <p>Entrepreneurship is about turning ideas into reality, whether that’s launching a business or creating a side project. Developing an entrepreneurial mindset allows you to think creatively, take risks, and pursue innovative solutions to problems. You can start small by experimenting with side projects or ventures that interest you. Entrepreneurship helps you build critical business skills, resilience, and the confidence to pursue your dreams.</p>
+      <p>Learn how to start your own business or innovate within existing industries. Entrepreneurship is about taking risks and solving problems in creative ways.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Business Plans:</strong> Learn how to write a business plan using templates from <a href="https://www.sba.gov/business-guide/plan-your-business/write-your-business-plan" target="_blank">SBA</a>.</li>
+        <li><strong>Innovation:</strong> Take inspiration from successful entrepreneurs like Elon Musk and Jeff Bezos.</li>
+      </ul>
     </div>
   </section>
 
   <section id="digital-presence">
     <h2 onclick="toggleContent(this)">10. Digital Presence and Online Safety</h2>
     <div class="content">
-      <p>In an increasingly digital world, maintaining a positive online presence is essential. Social media can be a powerful tool for showcasing your skills, connecting with others, and promoting your personal brand. However, it’s also important to stay aware of online security. Avoid oversharing personal information, and make sure your accounts are protected with strong, unique passwords. Maintaining a professional digital image while safeguarding your privacy is crucial for long-term success.</p>
+      <p>Your digital presence can affect your career. Create a strong online presence, while also maintaining safety by protecting your personal information.</p>
+      <p><strong>Study Material:</strong></p>
+      <ul>
+        <li><strong>Building a Portfolio:</strong> Create a personal website to showcase your work.</li>
+        <li><strong>Social Media:</strong> Use platforms like LinkedIn to share professional achievements and keep your profiles secure.</li>
+        <li><strong>Online Safety:</strong> Protect your data by using strong passwords and two-factor authentication.</li>
+      </ul>
     </div>
   </section>
 
 </div>
-
-
 
 <script>
   function toggleContent(element) {
@@ -238,8 +274,7 @@
     if (selectedValue === '1') {
       answer.style.display = 'block';
     } else {
-      answer.textContent = 'Try again!';
-      answer.style.display = 'block';
+      answer.style.display = 'none';
     }
   }
 </script>
