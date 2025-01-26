@@ -24,7 +24,7 @@
         overflow-y: auto;
         line-height: 1.9;
         box-sizing: border-box;
-        background-color: #07445c9d;
+        background-color: #40a4cc9d;
       }
 
       /* Header with main title and toggle */
@@ -35,8 +35,8 @@
         font-family: "Quicksand", sans-serif;
         font-style: normal;
         text-transform: uppercase;
-        background: rgba(209, 96, 9, 0.911);
-        color: rgba(216, 21, 7, 0.973);
+        background: rgba(239, 96, 57, 0.911);
+        color: rgba(17, 19, 20, 0.973);
         max-width: 100%;
         text-align: center;
         /* margin-top: 0px; */
@@ -45,17 +45,14 @@
 
       /* Toggle switch styling */
       .toggle-container {
-        position: absolute;
-        top: 9%;
-        right: 12%;
+        margin-top: 20px; /* Adjust the space between the header and toggle */
         display: flex;
+        justify-content: center;
         align-items: center;
-        /* z-index: 1000; */
       }
-
       .toggle-label {
         font-size: 1em;
-        color: #eedf0a;
+        color: #de5151;
         font-weight: 600;
         margin-right: 10px;
       }
@@ -109,8 +106,8 @@
       .content-item {
         padding: 40px 50px 30px 50px;
         font-size: 17px;
-        background: rgba(250, 249, 249, 0.932);
-        color: rgb(45, 45, 3);
+        background: rgba(178, 148, 180, 0.932);
+        color: rgb(26, 26, 8);
         margin-top: 15px;
         display: block;
       }
@@ -149,11 +146,11 @@
       td {
         padding: 10px;
         text-align: left;
-        border: 1px solid #ddd;
+        border: 1px solid #01e4f0;
       }
 
       th {
-        background-color: #f2f2f2;
+        background-color: #c8a74c;
         font-weight: bold;
       }
 
@@ -163,7 +160,7 @@
 
       /* Link styling */
       a {
-        color: #2196f3;
+        color: #0037ff;
         text-decoration: none;
       }
 
@@ -178,7 +175,7 @@
         right: 20px;
         display: none;
         background: #24cfdc;
-        color: white;
+        color: rgb(251, 0, 255);
         padding: 15px;
         font-size: 16px;
         border: none;
@@ -238,7 +235,7 @@
         }
         .toggle-container {
         position: absolute;
-        top: 1.5%;
+        top: 1%;
         right: 7%;
         font-size: 12px;
         /* bottom: 2%; */
@@ -246,6 +243,7 @@
         align-items: center;
         /* z-index: 1000; */
       }
+      
 
       }
 
@@ -253,25 +251,28 @@
   </head>
   <body>
 
-    <div class="toggle-container">
-      <span class="toggle-label">Music On/Off</span>
-      <label class="toggle-switch">
-        <input type="checkbox" id="musicToggle" />
-        <span class="slider"></span>
-      </label>
-    </div>
-    <!-- Audio Element for Background Music -->
-    <audio id="backgroundMusic" loop>
-      <source
-        src="music/y2mate.com - Oggy and the Cockroaches acapella.mp3"
-        type="audio/mp3"
-      />
-      Your browser does not support the audio element.
-    </audio>
+    
 
     <div class="root">
       <!-- Main Content Section -->
       <div class="header">Manage Time Like a Pro</div>
+
+      <div class="toggle-container">
+        <span class="toggle-label">Music<br> On/Off</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="musicToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <!-- Audio Element for Background Music -->
+      <audio id="backgroundMusic" loop>
+        <source
+          src="music1/y2mate.com - Oggy and the Cockroaches acapella.mp3"
+          type="audio/mp3"
+        />
+        Your browser does not support the audio element.
+      </audio>
+
       <img src="./photo/timemanage.jpg" />
 
       <div class="content-item">
@@ -282,27 +283,29 @@
         </p>
         <ul>
           <li>
-            <strong>Specific:</strong> Your goal should be clear and
-            unambiguous. <em>Example:</em> "I want to improve my math grade by
+            <strong>Specific:</strong> <br>Your goal should be clear and
+            unambiguous.<br> <em>Example:</em>  "I want to improve my math grade by
             10%."
           </li>
           <li>
-            <strong>Measurable:</strong> Define how success will be measured.
+            <strong>Measurable:</strong><br> Define how success will be measured.
+            <br>
             <em>Example:</em> "I will measure my improvement by the grade I get
             on my next math test."
           </li>
           <li>
-            <strong>Achievable:</strong> Ensure the goal is realistic and
-            possible. <em>Example:</em> "I can achieve this by setting aside 30
+            <strong>Achievable:</strong> <br> Ensure the goal is realistic and
+            possible.<br> <em>Example:</em> "I can achieve this by setting aside 30
             minutes daily for math practice."
           </li>
           <li>
-            <strong>Relevant:</strong> The goal should align with other
-            objectives. <em>Example:</em> "Improving my math grade will help my
+            <strong>Relevant:</strong><br> The goal should align with other
+            objectives.<br> <em>Example:</em> "Improving my math grade will help my
             academic success."
           </li>
           <li>
-            <strong>Time-Bound:</strong> Set a clear deadline.
+            <strong>Time-Bound:</strong><br> Set a clear deadline.
+            <br>
             <em>Example:</em> "I aim to achieve this goal by the end of the
             semester."
           </li>
@@ -378,30 +381,30 @@
         </p>
         <ul>
           <li>
-            <strong>Set Specific Study Goals:</strong> Break down what you need
+            <strong>Set Specific Study Goals:</strong><br> Break down what you need
             to achieve in each study session. <br />
             <em>Example:</em> "Review Chapter 5 and complete related practice
             problems."
           </li>
           <li>
-            <strong>Create a Consistent Routine:</strong> Study at the same time
+            <strong>Create a Consistent Routine:</strong><br> Study at the same time
             daily to build a habit and improve focus. <br />
             <em>Example:</em> "Study for 30 minutes after school every day."
           </li>
           <li>
-            <strong>Break Down Assignments:</strong> Split larger tasks into
+            <strong>Break Down Assignments:</strong> <br>Split larger tasks into
             smaller, manageable steps. <br />
             <em>Example:</em> "Research for project today, outline tomorrow, and
             draft over the weekend."
           </li>
           <li>
-            <strong>Practice Active Learning:</strong> Engage with the material
+            <strong>Practice Active Learning:</strong><br> Engage with the material
             through note-taking, quizzing yourself, or teaching others. <br />
             <em>Example:</em> "Summarize key points in your own words after
             reading."
           </li>
           <li>
-            <strong>Avoid Procrastination:</strong> Use tools like the Pomodoro
+            <strong>Avoid Procrastination:</strong><br> Use tools like the Pomodoro
             Technique to stay focused, working in short, timed intervals with
             breaks. <br />
             <em>Example:</em> "Study for 25 minutes, then take a 5-minute
@@ -424,27 +427,27 @@
         </p>
         <ul>
           <li>
-            <strong>Google Calendar:</strong> Schedule events, set reminders,
+            <strong>Google Calendar:</strong> <br>Schedule events, set reminders,
             and color-code tasks (e.g., red for school, blue for personal) to
             easily see what’s on your agenda. <br />
             <em>Example:</em> "Add your homework deadline and set a reminder one
             day before."
           </li>
           <li>
-            <strong>Trello:</strong> Use Trello’s Kanban boards to track tasks
+            <strong>Trello:</strong><br> Use Trello’s Kanban boards to track tasks
             and progress. Create lists like “To-Do,” “In Progress,” and “Done”
             to visually manage work. <br />
             <em>Example:</em> "Add each subject’s assignments as separate cards
             in Trello."
           </li>
           <li>
-            <strong>Notion:</strong> Set up customizable databases and templates
+            <strong>Notion:</strong><br> Set up customizable databases and templates
             to track goals, projects, and notes in one place. <br />
             <em>Example:</em> "Use a study planner template to organize study
             sessions for each subject."
           </li>
           <li>
-            <strong>Reminders App (Mobile):</strong> For quick, simple
+            <strong>Reminders App (Mobile):</strong><br> For quick, simple
             reminders, use your phone’s native app to set time- or
             location-based alerts. <br />
             <em>Example:</em> "Set a reminder to check assignments each
