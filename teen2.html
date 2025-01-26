@@ -21,18 +21,31 @@
             cursor: url('photo/stick48.jpg'), auto; /* Custom cursor applied to the body */
         }
 
-        .toggle-container {
-            position: fixed;
-            top: 15px;
-            right: 20px;
-            z-index: 1000; /* Ensures it stays above all other elements */
-            display: flex;
-            align-items: center;
+        /* Black top bar styling */
+        .top-bar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Black background */
+            color: white; /* White text */
+            padding: 10px 0px; /* Adds spacing inside the bar */
+            position: fixed; /* Sticks it to the top */
+            top: 0; /* Positions at the top */
+            left: 0;
+            z-index: 999; /* Ensures it's on top of other elements */
+            display: flex; /* Enables flexbox layout */
+            justify-content: center; /* Centers text horizontally */
+            align-items: center; /* Centers content vertically */
+            font-size: 2.1em; /* Increases font size */
+            text-align: center; /* Aligns text inside */
+            height: 60px;
         }
 
-        .toggle-label {
-            margin-right: 10px;
-            font-size: 16px;
+        /* Toggle container for the music button */
+        .toggle-container {
+            margin: 0 auto; /* Centers the toggle container */
+            position: relative;
+            top: 100px; /* Positions below the top bar */
+            width: fit-content;
+            text-align: center;
         }
 
         .toggle-switch {
@@ -41,7 +54,8 @@
             height: 25px;
             background-color: #686868;
             border-radius: 25px;
-            cursor: url('photo/stick48.jpg'), auto; /* Ensure the custom cursor stays here */
+            cursor: pointer; /* Standard pointer cursor */
+            margin: 0 auto; /* Centers the switch */
         }
 
         .toggle-switch::before {
@@ -65,35 +79,15 @@
             transform: translateX(25px);
         }
 
-         /* Responsive adjustments */
-         @media (max-width: 800px) {
-            .toggle-container {
-                top: 70px; /* Move it slightly down */
-                right: 10px; /* Move it slightly to the left */
-            }
-
-            h1 {
-                margin-top: 60px; /* Add extra margin on top of the heading */
-                font-size: 24px; /* Adjust font size for small screens */
-            }
-        }
-
-        /* Black top bar styling */
-        .top-bar {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Black background */
-            color: white; /* White text */
-            padding: 10px 0; /* Adds vertical padding */
-            position: fixed; /* Sticks it to the top */
-            top: 0; /* Positions at the top */
-            left: 0;
-            z-index: 999; /* Ensures it's on top of other elements */
-            font-size: 2.1em; /* Increases font size slightly */
+        .toggle-label {
+            margin-top: 10px;
+            font-size: 1em; /* Adjust label size */
+            display: block; /* Ensures it appears below the toggle */
         }
 
         /* Adds margin to content so it doesn't overlap with the top bar */
         .content {
-            margin-top: 100px; /* Adjust according to the height of your top bar */
+            margin-top: 150px; /* Adjust according to the height of your top bar and toggle */
         }
 
         .image-container {
@@ -107,7 +101,7 @@
             width: 200px;
             height: auto;
             border: none;
-            cursor: url('photo/stick48.jpg'), auto; /* Custom cursor for image links */
+            cursor: pointer; /* Standard pointer cursor */
             transition: transform 0.3s ease;
         }
 
@@ -117,7 +111,7 @@
 
         .footer {
             text-align: center;
-            font-size: larger;
+            font-size: medium;
             padding: 30px;
             background-color: #96fcff;
             position: fixed;
@@ -125,7 +119,6 @@
             bottom: 0;
             width: 100%;
             color: black;
-            
         }
     </style>
 </head>
@@ -137,10 +130,49 @@
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Music Toggle Switch -->
+    <!-- Black top bar -->
+    <div class="top-bar">
+        Welcome to The Website for Teens
+    </div>
+
+    <!-- Music Toggle -->
     <div class="toggle-container">
-        <span class="toggle-label">Music<br>on/off</span>
         <div id="musicToggle" class="toggle-switch"></div>
+        <span class="toggle-label">Music on/off</span>
+    </div>
+
+    <div class="content">
+        <div class="image-container">
+            <div class="image-button">
+                <a href="communication.html" target="_self">
+                    <img src="video/communicationre.gif" alt="Go to second webpage">
+                </a>
+            </div>
+            <div class="image-button">
+                <a href="time.html" target="_self">
+                    <img src="video/TIME MANAGEMENT00.gif" alt="Go to second webpage">
+                </a>
+            </div>
+            <div class="image-button">
+                <a href="financial-lit.html" target="_self">
+                    <img src="video/FINence 01_1.gif" alt="Go to second webpage">
+                </a>
+            </div>
+            <div class="image-button">
+                <a href="career.html" target="_self">
+                    <img src="video/Career Preparation11111.gif" alt="Go to second webpage">
+                </a>
+            </div>
+            <div class="image-button">
+                <a href="onlinetest.html" target="_self">
+                    <img src="video/ONLINE.gif" alt="Go to second webpage">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Choose any Topic According to your need
     </div>
 
     <!-- JavaScript -->
@@ -164,50 +196,6 @@
             isPlaying = !isPlaying; // Flip the state
         });
     </script>
-    
 
-    <!-- Black top bar --> 
-    <div class="top-bar">
-        Welcome to The Website for Teens
-    </div>
-
-    <div class="content">
-        <div class="image-container">
-            <div class="image-button">
-                <a href="communication.html" target="_self">
-                    <img src="video/communicationre.gif" alt="Go to second webpage">
-                </a>
-            </div>
-
-            <div class="image-button">
-                <a href="time.html" target="_self">
-
-                    <img src="video/TIME MANAGEMENT00.gif" alt="Go to second webpage">
-                </a>
-            </div>
-
-            <div class="image-button">
-                <a href="financial-lit.html" target="_self">
-                    <img src="video/FINence 01_1.gif" alt="Go to second webpage">
-                </a>
-            </div>
-
-            <div class="image-button">
-                <a href="career.html" target="_self">
-                    <img src="video/Career Preparation11111.gif" alt="Go to second webpage">
-                </a>
-            </div>
-            <div class="image-button">
-                <a href="onlinetest.html" target="_self">
-                    <img src="video/ONLINE.gif" alt="Go to second webpage">
-                </a>
-            </div>
-        </div>
-       
-    </div>
-    <div class="footer">
-        Choose any Topic According to your need
-    </div>
-    
 </body>
 </html>
