@@ -17,50 +17,37 @@
       rel="stylesheet"
     />
     <style>
-      /* Base reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      /* Set up background image and layout */
       body {
         font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
-        overflow-y: scroll;
+        overflow-y: auto;
         line-height: 1.9;
-        padding: 20px;
-        text-align: center;
+        box-sizing: border-box;
         background-color: #40b4e2;
       }
-
-      
 
       /* Header with main title and toggle */
       .header {
         font-size: 3.5em;
         font-weight: bold;
-        margin: auto;
+        margin: 9% auto;
         font-family: "Quicksand", sans-serif;
         font-style: normal;
         text-transform: uppercase;
         background: rgba(255, 173, 110, 0.9);
         color: rgba(61, 66, 60, 0.794);
-        width: 100%;
-        height: 75px;
+        max-width: 100%;
         text-align: center;
-        margin-top: 0px;
-        margin-bottom: 65px;
-        padding-bottom: 8%;
+        /* margin-top: 0px; */
+        /* margin-bottom: 65px; */
       }
 
       /* Toggle switch styling */
       .toggle-container {
         position: absolute;
-        top: 35px;
-        right: 50px;
+        top: 9%;
+        right: 12%;
         display: flex;
         align-items: center;
         /* z-index: 1000; */
@@ -80,11 +67,6 @@
         height: 24px;
       }
 
-      .toggle-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
 
       .slider {
         position: absolute;
@@ -95,7 +77,7 @@
         bottom: 0;
         background-color: #ccc;
         transition: 0.4s;
-        border-radius: 24px;
+        border-radius: 14px;
       }
 
       .slider:before {
@@ -121,7 +103,6 @@
       .root {
         margin: auto;
         max-width: 1000px;
-        
       }
 
       /* Page content */
@@ -158,9 +139,10 @@
 
       /* Table for Eisenhower Matrix */
       table {
-        width: 100%;
+        max-width: 100%;
         margin-bottom: 20px;
-        border-collapse: collapse;
+        border-collapse: separate;
+        display: block;
       }
 
       th,
@@ -191,35 +173,88 @@
 
       /* Image styling */
       #topBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      background: #24cfdc;
-      color: white;
-      padding: 15px;
-      font-size: 16px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        background: #24cfdc;
+        color: white;
+        padding: 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
 
-    #topBtn:hover {
-      background: #43A047;
-    }
+      #topBtn:hover {
+        background: #43a047;
+      }
 
-    img{
-      box-sizing: border-box;
-      display: block;
-      max-width: 100%;
-    }
-      
+      img {
+        box-sizing: border-box;
+        display: block;
+        max-width: 100%;
+      }
+
+      @media (max-width: 480px) {
+        table {
+          font-size: 12px;
+          /* margin-left: 0px; */
+          margin: 0;
+          padding: 0;
+        }
+        .content-item {
+          font-size: 12px;
+        }
+        .header {
+          font-size: x-large;
+          margin: 20% 5% 5% 5%;
+        }
+        .toggle-container {
+        position: absolute;
+        top: 1.5%;
+        right: 5%;
+        font-size: 0px;
+        /* bottom: 2%; */
+        display: flex;
+        align-items: center;
+        /* z-index: 1000; */
+      }
+
+      }
+
+      @media (max-width: 810px) {
+        table {
+          font-size: 12px;
+          /* margin-left: 0px; */
+          margin: 0;
+          padding: 0;
+        }
+        .content-item {
+          font-size: 12px;
+        }
+        .header {
+          font-size: x-large;
+          margin: 20% 5% 5% 5%;
+        }
+        .toggle-container {
+        position: absolute;
+        top: 1.5%;
+        right: 7%;
+        font-size: 12px;
+        /* bottom: 2%; */
+        display: flex;
+        align-items: center;
+        /* z-index: 1000; */
+      }
+
+      }
+
     </style>
   </head>
   <body>
-    <canvas id="stripCanvas"></canvas>
 
     <div class="toggle-container">
       <span class="toggle-label">Immersive <br />Experience</span>
@@ -238,10 +273,9 @@
     </audio>
 
     <div class="root">
-
       <!-- Main Content Section -->
       <div class="header">Manage Time Like a Pro</div>
-      <img src="./photo/timemanage.jpg">
+      <img src="./photo/timemanage.jpg" />
 
       <div class="content-item">
         <h2>SMART Goals: A Framework for Achieving Success</h2>
@@ -452,18 +486,20 @@
         }
       });
 
-      window.onscroll = function() {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        document.getElementById("topBtn").style.display = "block";
-      } else {
-        document.getElementById("topBtn").style.display = "none";
-      }
-    };
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          document.getElementById("topBtn").style.display = "block";
+        } else {
+          document.getElementById("topBtn").style.display = "none";
+        }
+      };
 
-    document.getElementById("topBtn").onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
+      document.getElementById("topBtn").onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
     </script>
   </body>
 </html>
